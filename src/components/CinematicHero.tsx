@@ -81,8 +81,17 @@ const CinematicHero = () => {
     };
   }, [activateWord, deactivateWord]);
 
-  // Calculate word opacity based on scroll position
-  const getWordOpacity = (fadeThreshold: number) => {
+  // Hero elements with their fade thresholds
+  const heroElements = {
+    badge: { fadeThreshold: 80 },
+    interactiveWords: { fadeThreshold: 160 },
+    byline: { fadeThreshold: 220 },
+    scrollIndicator: { fadeThreshold: 140 },
+    scrollButton: { fadeThreshold: 300 }
+  };
+
+  // Calculate element opacity based on scroll position
+  const getElementOpacity = (fadeThreshold: number) => {
     const fadeStart = fadeThreshold;
     const fadeEnd = fadeThreshold + 100;
     
@@ -179,6 +188,10 @@ const CinematicHero = () => {
         onClick={handleScrollEffect}
         className="absolute bottom-8 right-8 z-30 w-12 h-12 bg-white/20 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-300 group"
         aria-label="Scroll effect"
+        style={{
+          opacity: getElementOpacity(heroElements.scrollButton.fadeThreshold),
+          willChange: 'opacity'
+        }}
       >
         <Play className="w-5 h-5 text-white group-hover:scale-110 transition-transform duration-300" />
       </button>
@@ -199,10 +212,11 @@ const CinematicHero = () => {
       <div className="max-w-4xl mx-auto text-center relative z-20">
         {/* Category Badge */}
         <div 
-          className="mb-8 transition-transform duration-300 ease-out origin-center"
+          className="mb-8 transition-all duration-300 ease-out origin-center"
           style={{ 
             transform: `scale(${titleScale})`,
-            willChange: 'transform'
+            opacity: getElementOpacity(heroElements.badge.fadeThreshold),
+            willChange: 'transform, opacity'
           }}
         >
           <span className="inline-block px-3 py-1 text-ft-salmon text-sm font-medium border border-ft-salmon rounded">
@@ -225,7 +239,7 @@ const CinematicHero = () => {
                   key={index}
                   className="transition-opacity duration-300"
                   style={{
-                    opacity: getWordOpacity(word.fadeThreshold),
+                    opacity: getElementOpacity(word.fadeThreshold),
                     willChange: 'opacity'
                   }}
                 >
@@ -239,7 +253,7 @@ const CinematicHero = () => {
                   key={index + 4}
                   className="transition-opacity duration-300"
                   style={{
-                    opacity: getWordOpacity(word.fadeThreshold),
+                    opacity: getElementOpacity(word.fadeThreshold),
                     willChange: 'opacity'
                   }}
                 >
@@ -252,10 +266,11 @@ const CinematicHero = () => {
 
         {/* Interactive word section */}
         <div 
-          className="mb-16 transition-transform duration-300 ease-out origin-center"
+          className="mb-16 transition-all duration-300 ease-out origin-center"
           style={{ 
             transform: `scale(${titleScale})`,
-            willChange: 'transform'
+            opacity: getElementOpacity(heroElements.interactiveWords.fadeThreshold),
+            willChange: 'transform, opacity'
           }}
         >
           <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
@@ -278,10 +293,11 @@ const CinematicHero = () => {
 
         {/* Byline */}
         <div 
-          className="text-white ft-caption transition-transform duration-300 ease-out origin-center"
+          className="text-white ft-caption transition-all duration-300 ease-out origin-center"
           style={{ 
             transform: `scale(${titleScale})`,
-            willChange: 'transform'
+            opacity: getElementOpacity(heroElements.byline.fadeThreshold),
+            willChange: 'transform, opacity'
           }}
         >
           <p className="mb-2">
@@ -293,10 +309,11 @@ const CinematicHero = () => {
 
       {/* Scroll indicator */}
       <div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-transform duration-300 ease-out origin-center"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-300 ease-out origin-center"
         style={{ 
           transform: `translateX(-50%) scale(${titleScale})`,
-          willChange: 'transform'
+          opacity: getElementOpacity(heroElements.scrollIndicator.fadeThreshold),
+          willChange: 'transform, opacity'
         }}
       >
         <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
