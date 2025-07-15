@@ -126,7 +126,10 @@ const CinematicHero = () => {
         <source src="https://uwnedyuvsqhwrerzjeae.supabase.co/storage/v1/object/public/story-audio//social_annaart_39271_httpss.mj.runV_ntCHMI9Zs_--ar_11_--video_1_f1202a22-825a-4694-b523-3a24f6809715_1.mp4" type="video/mp4" />
       </video>
       
-      <div className="max-w-4xl mx-auto text-center relative z-10">
+      {/* Darkening overlay */}
+      <div className="absolute inset-0 bg-black/50 z-10"></div>
+      
+      <div className="max-w-4xl mx-auto text-center relative z-20">
         {/* Category Badge */}
         <div className="mb-8">
           <span className="inline-block px-3 py-1 text-ft-salmon text-sm font-medium border border-ft-salmon rounded">
@@ -142,7 +145,7 @@ const CinematicHero = () => {
             willChange: 'transform'
           }}
         >
-          <h1 className="ft-headline-giant text-ft-charcoal leading-none">
+          <h1 className="ft-headline-giant text-white leading-none">
             <div className="flex flex-wrap justify-center gap-x-4">
               {headlineWords.slice(0, 4).map((word, index) => (
                 <span
@@ -195,7 +198,7 @@ const CinematicHero = () => {
         </div>
 
         {/* Byline */}
-        <div className="text-ft-light-brown ft-caption">
+        <div className="text-white ft-caption">
           <p className="mb-2">
             By <span className="text-ft-salmon font-medium">Lovable</span> and <span className="text-ft-salmon font-medium">Anna Arteeva</span> in München, Germany
           </p>
@@ -205,8 +208,8 @@ const CinematicHero = () => {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <div className="w-6 h-10 border-2 border-ft-light-brown rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-ft-light-brown rounded-full mt-2 animate-pulse"></div>
+        <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
     </section>
