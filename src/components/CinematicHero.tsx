@@ -188,7 +188,7 @@ const CinematicHero = () => {
         muted
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover opacity-0"
+        className="absolute inset-0 w-full h-full object-cover opacity-90"
       >
         <source src="https://uwnedyuvsqhwrerzjeae.supabase.co/storage/v1/object/public/story-audio//social_annaart_39271_httpss.mj.runV_ntCHMI9Zs_--ar_11_--video_1_f1202a22-825a-4694-b523-3a24f6809715_1.mp4" type="video/mp4" />
       </video>
