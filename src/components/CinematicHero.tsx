@@ -123,7 +123,7 @@ const CinematicHero = () => {
         playsInline
         className="absolute inset-0 w-full h-full object-cover opacity-20"
       >
-        <source src="/hero-background.mp4" type="video/mp4" />
+        <source src="https://cdn.midjourney.com/video/9a299f42-c9e1-42a3-badd-5fa8c6709df2/0.mp4" type="video/mp4" />
       </video>
       
       {/* Overlay for better text readability */}
