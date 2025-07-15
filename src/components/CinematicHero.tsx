@@ -131,7 +131,13 @@ const CinematicHero = () => {
       
       <div className="max-w-4xl mx-auto text-center relative z-20">
         {/* Category Badge */}
-        <div className="mb-8">
+        <div 
+          className="mb-8 transition-transform duration-300 ease-out origin-center"
+          style={{ 
+            transform: `scale(${titleScale})`,
+            willChange: 'transform'
+          }}
+        >
           <span className="inline-block px-3 py-1 text-ft-salmon text-sm font-medium border border-ft-salmon rounded">
             Wellness & Design
           </span>
@@ -178,7 +184,13 @@ const CinematicHero = () => {
         </div>
 
         {/* Interactive word section */}
-        <div className="mb-16">
+        <div 
+          className="mb-16 transition-transform duration-300 ease-out origin-center"
+          style={{ 
+            transform: `scale(${titleScale})`,
+            willChange: 'transform'
+          }}
+        >
           <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
             {words.map((word, index) => (
               <span
@@ -198,7 +210,13 @@ const CinematicHero = () => {
         </div>
 
         {/* Byline */}
-        <div className="text-white ft-caption">
+        <div 
+          className="text-white ft-caption transition-transform duration-300 ease-out origin-center"
+          style={{ 
+            transform: `scale(${titleScale})`,
+            willChange: 'transform'
+          }}
+        >
           <p className="mb-2">
             By <span className="text-ft-salmon font-medium">Lovable</span> and <span className="text-ft-salmon font-medium">Anna Arteeva</span> in München, Germany
           </p>
@@ -207,7 +225,13 @@ const CinematicHero = () => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+      <div 
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-transform duration-300 ease-out origin-center"
+        style={{ 
+          transform: `translateX(-50%) scale(${titleScale})`,
+          willChange: 'transform'
+        }}
+      >
         <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
           <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
         </div>
