@@ -1,5 +1,6 @@
 
 import { useEffect, useState, useCallback } from "react";
+import { Play } from "lucide-react";
 
 interface WordHighlight {
   word: string;
@@ -113,8 +114,74 @@ const CinematicHero = () => {
     };
   }, []);
 
+  const handleScrollEffect = useCallback(() => {
+    const windowHeight = window.innerHeight;
+    const targetScroll = windowHeight * 0.9;
+    const currentScroll = window.scrollY;
+    
+    // Scroll down slowly to 90vh
+    const scrollDown = () => {
+      const startTime = Date.now();
+      const duration = 3000; // 3 seconds for slow scroll down
+      
+      const animateDown = () => {
+        const elapsed = Date.now() - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        // Easing function for smooth animation
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        const currentPosition = currentScroll + (targetScroll - currentScroll) * easeOut;
+        
+        window.scrollTo(0, currentPosition);
+        
+        if (progress < 1) {
+          requestAnimationFrame(animateDown);
+        } else {
+          // Start scrolling back up after reaching 90vh
+          setTimeout(scrollUp, 500); // Small pause before scrolling back
+        }
+      };
+      
+      requestAnimationFrame(animateDown);
+    };
+    
+    // Scroll back up faster
+    const scrollUp = () => {
+      const startTime = Date.now();
+      const duration = 1500; // 1.5 seconds for faster scroll up
+      const startPosition = window.scrollY;
+      
+      const animateUp = () => {
+        const elapsed = Date.now() - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        // Easing function for smooth animation
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        const currentPosition = startPosition - (startPosition - currentScroll) * easeOut;
+        
+        window.scrollTo(0, currentPosition);
+        
+        if (progress < 1) {
+          requestAnimationFrame(animateUp);
+        }
+      };
+      
+      requestAnimationFrame(animateUp);
+    };
+    
+    scrollDown();
+  }, []);
+
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-4 py-20 bg-background relative overflow-hidden">
+      {/* Scroll Effect Button */}
+      <button
+        onClick={handleScrollEffect}
+        className="fixed top-4 right-4 z-30 w-10 h-10 bg-white/20 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-300 group"
+        aria-label="Scroll effect"
+      >
+        <Play className="w-4 h-4 text-white group-hover:scale-110 transition-transform duration-300" />
+      </button>
       {/* Background Video */}
       <video
         autoPlay
