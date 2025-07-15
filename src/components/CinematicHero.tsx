@@ -177,10 +177,10 @@ const CinematicHero = () => {
       {/* Scroll Effect Button */}
       <button
         onClick={handleScrollEffect}
-        className="fixed top-4 right-4 z-30 w-10 h-10 bg-white/20 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-300 group"
+        className="absolute bottom-8 right-8 z-30 w-12 h-12 bg-white/20 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-300 group"
         aria-label="Scroll effect"
       >
-        <Play className="w-4 h-4 text-white group-hover:scale-110 transition-transform duration-300" />
+        <Play className="w-5 h-5 text-white group-hover:scale-110 transition-transform duration-300" />
       </button>
       {/* Background Video */}
       <video
