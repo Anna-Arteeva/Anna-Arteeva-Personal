@@ -101,7 +101,7 @@ const CinematicHero = () => {
       
       // Calculate scale based on scroll position
       const scrollProgress = Math.min(scrollPosition / (windowHeight * 0.8), 1);
-      const scale = 1 + (scrollProgress * 0.3);
+      const scale = 1 + (scrollProgress * 0.8);
       
       setTitleScale(scale);
     };
