@@ -114,8 +114,21 @@ const CinematicHero = () => {
   }, []);
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-4 py-20 bg-background">
-      <div className="max-w-4xl mx-auto text-center">
+    <section className="min-h-screen flex flex-col items-center justify-center px-4 py-20 bg-background relative overflow-hidden">
+      {/* Background Video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-20"
+      >
+        <source src="/hero-background.mp4" type="video/mp4" />
+      </video>
+      
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-background/60"></div>
+      <div className="max-w-4xl mx-auto text-center relative z-10">
         {/* Category Badge */}
         <div className="mb-8">
           <span className="inline-block px-3 py-1 text-ft-salmon text-sm font-medium border border-ft-salmon rounded">
