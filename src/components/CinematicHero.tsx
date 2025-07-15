@@ -126,8 +126,6 @@ const CinematicHero = () => {
         <source src="https://uwnedyuvsqhwrerzjeae.supabase.co/storage/v1/object/public/story-audio//social_annaart_39271_httpss.mj.runV_ntCHMI9Zs_--ar_11_--video_1_f1202a22-825a-4694-b523-3a24f6809715_1.mp4" type="video/mp4" />
       </video>
       
-      {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-background/60"></div>
       <div className="max-w-4xl mx-auto text-center relative z-10">
         {/* Category Badge */}
         <div className="mb-8">
