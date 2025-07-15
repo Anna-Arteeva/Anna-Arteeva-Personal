@@ -1,0 +1,250 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Financial Times inspired design system */
+
+@layer base {
+  :root {
+    /* FT Color palette */
+    --background: 23 13% 95%;
+    --foreground: 0 0% 12%;
+
+    --card: 23 13% 95%;
+    --card-foreground: 0 0% 12%;
+
+    --popover: 23 13% 95%;
+    --popover-foreground: 0 0% 12%;
+
+    /* FT signature salmon/pink */
+    --primary: 336 82% 62%;
+    --primary-foreground: 0 0% 100%;
+
+    /* FT secondary colors */
+    --secondary: 23 20% 88%;
+    --secondary-foreground: 0 0% 12%;
+
+    --muted: 23 20% 88%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 336 82% 62%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 23 20% 82%;
+    --input: 23 20% 82%;
+    --ring: 336 82% 62%;
+
+    /* FT specific colors */
+    --ft-salmon: 336 82% 62%;
+    --ft-charcoal: 0 0% 12%;
+    --ft-cream: 23 13% 95%;
+    --ft-brown: 23 20% 25%;
+    --ft-light-brown: 23 20% 70%;
+
+    /* Typography scale */
+    --headline-giant: 4.5rem;
+    --headline-large: 3.5rem;
+    --headline-medium: 2.25rem;
+    --body-large: 1.125rem;
+    --body-medium: 1rem;
+    --caption: 0.875rem;
+
+    --radius: 0.25rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 336 82% 62%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 336 82% 62%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 336 82% 62%;
+
+    --ft-salmon: 336 82% 62%;
+    --ft-charcoal: 0 0% 95%;
+    --ft-cream: 0 0% 8%;
+    --ft-brown: 0 0% 85%;
+    --ft-light-brown: 0 0% 40%;
+
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 336 82% 62%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 336 82% 62%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.6;
+  }
+
+  /* FT Typography */
+  .ft-headline-giant {
+    font-size: var(--headline-giant);
+    line-height: 1.1;
+    font-weight: 400;
+    font-family: 'Georgia', serif;
+  }
+
+  .ft-headline-large {
+    font-size: var(--headline-large);
+    line-height: 1.2;
+    font-weight: 400;
+    font-family: 'Georgia', serif;
+  }
+
+  .ft-headline-medium {
+    font-size: var(--headline-medium);
+    line-height: 1.3;
+    font-weight: 700;
+    font-family: 'Georgia', serif;
+  }
+
+  .ft-body-large {
+    font-size: var(--body-large);
+    line-height: 1.6;
+    font-family: 'Georgia', serif;
+  }
+
+  .ft-body-medium {
+    font-size: var(--body-medium);
+    line-height: 1.6;
+    font-family: 'Georgia', serif;
+  }
+
+  .ft-caption {
+    font-size: var(--caption);
+    line-height: 1.4;
+    color: hsl(var(--ft-light-brown));
+  }
+
+  /* Cinematic word animations */
+  .word-fade {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .word-fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .word-highlight {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid hsl(var(--ft-charcoal));
+    padding: 0.5rem 1rem;
+    margin: 0.25rem;
+    border-radius: 0.25rem;
+    display: inline-block;
+    transition: all 0.6s ease;
+  }
+
+  .word-highlight.active {
+    background: hsl(var(--ft-salmon));
+    color: white;
+    border-color: hsl(var(--ft-salmon));
+    transform: scale(1.05);
+  }
+
+  /* FT specific animations */
+  @keyframes ft-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes ft-zoom-in {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.1);
+    }
+  }
+
+  .ft-animate-in {
+    animation: ft-fade-in 1s ease-out forwards;
+  }
+
+  /* Smooth scroll-triggered animations */
+  .cinematic-title {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+    will-change: transform;
+  }
+
+  /* Enhanced hover effects for FT elements */
+  .ft-interactive:hover {
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+  }
+
+  /* Parallax container */
+  .parallax-container {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  /* Optimize performance for scroll animations */
+  .scroll-optimized {
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    will-change: transform;
+  }
+}
