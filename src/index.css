@@ -181,20 +181,25 @@
   }
 
   .word-highlight {
-    background: rgba(255, 255, 255, 0.9);
-    border: 2px solid hsl(var(--ft-charcoal));
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 0.5rem 1rem;
     margin: 0.25rem;
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
     display: inline-block;
     transition: all 0.6s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    color: hsl(var(--ft-charcoal));
   }
 
   .word-highlight.active {
-    background: hsl(var(--ft-salmon));
-    color: white;
-    border-color: hsl(var(--ft-salmon));
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     transform: scale(1.05);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    color: hsl(var(--ft-charcoal));
   }
 
   /* FT specific animations */
