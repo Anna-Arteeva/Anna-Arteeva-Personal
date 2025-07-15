@@ -127,7 +127,7 @@ const CinematicHero = () => {
       </video>
       
       {/* Darkening overlay */}
-      <div className="absolute inset-0 bg-black/100 z-10"></div>
+      <div className="absolute inset-0 bg-black/70 z-10"></div>
       
       <div className="max-w-4xl mx-auto text-center relative z-20">
         {/* Category Badge */}
