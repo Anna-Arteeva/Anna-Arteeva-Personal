@@ -123,7 +123,7 @@ const CinematicHero = () => {
         playsInline
         className="absolute inset-0 w-full h-full object-cover opacity-20"
       >
-        <source src="https://cdn.midjourney.com/video/9a299f42-c9e1-42a3-badd-5fa8c6709df2/0.mp4" type="video/mp4" />
+        <source src="https://uwnedyuvsqhwrerzjeae.supabase.co/storage/v1/object/public/story-audio//social_annaart_39271_httpss.mj.runV_ntCHMI9Zs_--ar_11_--video_1_f1202a22-825a-4694-b523-3a24f6809715_1.mp4" type="video/mp4" />
       </video>
       
       {/* Overlay for better text readability */}
