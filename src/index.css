@@ -130,7 +130,7 @@
 
   /* FT Typography */
   .ft-headline-giant {
-    font-size: var(--headline-giant);
+    font-size: clamp(1.875rem, 8vw, 7.5rem); /* 30px to 120px fluid scaling */
     line-height: 1.1;
     font-weight: 400;
     font-family: 'Georgia', serif;
