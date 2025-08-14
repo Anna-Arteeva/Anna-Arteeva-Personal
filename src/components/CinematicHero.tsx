@@ -16,20 +16,39 @@ const CinematicHero = () => {
 
   // Main headline words with staggered fade priorities
   const headlineWords = [
-    { text: "Beauty", fadeThreshold: 250 }, // Fades last
-    { text: "is", fadeThreshold: 100 },
-    { text: "essential", fadeThreshold: 150 },
-    { text: "for", fadeThreshold: 120 },
-    { text: "sustainable", fadeThreshold: 180 },
-    { text: "living", fadeThreshold: 200 },
+    { text: "Shaping", fadeThreshold: 250 },
+    { text: "tomorrow's", fadeThreshold: 100 },
+    { text: "products,", fadeThreshold: 150 },
+    { text: "today", fadeThreshold: 120 },
   ];
 
+  // Interactive words for animation
   const heroWords: WordHighlight[] = [
-    { word: "Aesthetics", isActive: false, delay: 0 },
-    { word: "transforms", isActive: false, delay: 800 },
-    { word: "our", isActive: false, delay: 1600 },
-    { word: "daily", isActive: false, delay: 2400 },
-    { word: "experience", isActive: false, delay: 3200 }
+    { word: "AI", isActive: false, delay: 0 },
+    { word: "SaaS", isActive: false, delay: 800 },
+    { word: "FinTech", isActive: false, delay: 1600 },
+    { word: "B2B", isActive: false, delay: 2400 },
+  ];
+
+  // Paragraph words for gradual fade out
+  const paragraphWords = [
+    { text: "Multi-faceted", fadeThreshold: 80 },
+    { text: "hands-on", fadeThreshold: 100 },
+    { text: "designer,", fadeThreshold: 120 },
+    { text: "product", fadeThreshold: 140 },
+    { text: "builder,", fadeThreshold: 160 },
+    { text: "and", fadeThreshold: 180 },
+    { text: "AI", fadeThreshold: 200 },
+    { text: "educator", fadeThreshold: 220 },
+    { text: "with", fadeThreshold: 240 },
+    { text: "a", fadeThreshold: 260 },
+    { text: "knack", fadeThreshold: 280 },
+    { text: "for", fadeThreshold: 300 },
+    { text: "strategy", fadeThreshold: 320 },
+    { text: "and", fadeThreshold: 340 },
+    { text: "complex", fadeThreshold: 360 },
+    { text: "systems", fadeThreshold: 380 },
+    { text: "design.", fadeThreshold: 400 },
   ];
 
   const [words, setWords] = useState(heroWords);
@@ -83,11 +102,13 @@ const CinematicHero = () => {
 
   // Hero elements with their fade thresholds
   const heroElements = {
-    badge: { fadeThreshold: 80 },
+    name: { fadeThreshold: 60 },
+    subtitle: { fadeThreshold: 120 },
     interactiveWords: { fadeThreshold: 160 },
-    byline: { fadeThreshold: 220 },
+    paragraph: { fadeThreshold: 200 },
+    navigation: { fadeThreshold: 300 },
     scrollIndicator: { fadeThreshold: 140 },
-    scrollButton: { fadeThreshold: 300 }
+    scrollButton: { fadeThreshold: 350 }
   };
 
   // Calculate element opacity based on scroll position
@@ -182,59 +203,80 @@ const CinematicHero = () => {
   }, []);
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-4 py-20 bg-background relative overflow-hidden">
-      {/* Scroll Effect Button */}
-      <button
-        onClick={handleScrollEffect}
-        className="absolute bottom-8 right-8 z-30 w-12 h-12 bg-white/20 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-300 group"
-        aria-label="Scroll effect"
-        style={{
-          opacity: getElementOpacity(heroElements.scrollButton.fadeThreshold),
-          willChange: 'opacity'
-        }}
-      >
-        <Play className="w-5 h-5 text-white group-hover:scale-110 transition-transform duration-300" />
-      </button>
-      {/* Background Video */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover opacity-90"
-      >
-        <source src="https://cdn.midjourney.com/video/9a299f42-c9e1-42a3-badd-5fa8c6709df2/2.mp4" type="video/mp4" />
-      </video>
-      
-      {/* Darkening overlay */}
-      <div className="absolute inset-0 bg-black/50 z-10"></div>
-      
-      <div className="max-w-4xl mx-auto text-center relative z-20">
-        {/* Category Badge */}
-        <div 
-          className="mb-8 transition-all duration-300 ease-out origin-center"
-          style={{ 
-            transform: `scale(${titleScale})`,
-            opacity: getElementOpacity(heroElements.badge.fadeThreshold),
-            willChange: 'transform, opacity'
-          }}
-        >
-          <span className="inline-block px-3 py-1 text-ft-salmon text-sm font-medium border border-ft-salmon rounded">
-            Wellness & Design
-          </span>
-        </div>
+    <section className="min-h-screen bg-design-bg relative overflow-hidden flex flex-col">
+      {/* Name and Subtitle positioned at top */}
+      <div className="pt-8 px-4 text-center">
+        <div className="max-w-4xl mx-auto">
+          {/* Name */}
+          <div 
+            className="mb-2 transition-all duration-300 ease-out origin-center"
+            style={{ 
+              transform: `scale(${titleScale})`,
+              opacity: getElementOpacity(heroElements.name.fadeThreshold),
+              willChange: 'transform, opacity'
+            }}
+          >
+            <h2 className="font-playfair font-black text-3xl text-black leading-none">
+              Anna Arteeva
+            </h2>
+          </div>
 
-        {/* Main Headline with Cinematic Zoom and Staggered Fade */}
-        <div 
-          className="mb-12 transition-transform duration-300 ease-out origin-center"
-          style={{ 
-            transform: `scale(${titleScale})`,
-            willChange: 'transform'
-          }}
-        >
-          <h1 className="ft-headline-giant text-white leading-none">
-            <div className="flex flex-wrap justify-center gap-x-4">
-              {headlineWords.slice(0, 4).map((word, index) => (
+          {/* Subtitle */}
+          <div 
+            className="mb-8 transition-all duration-300 ease-out origin-center"
+            style={{ 
+              transform: `scale(${titleScale})`,
+              opacity: getElementOpacity(heroElements.subtitle.fadeThreshold),
+              willChange: 'transform, opacity'
+            }}
+          >
+            <p className="font-allura text-2xl text-black leading-none">
+              Designer and Design Leader
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Main content centered in the middle */}
+      <div className="flex-1 flex flex-col items-center justify-center px-4">
+        <div className="max-w-4xl mx-auto text-center relative z-20">
+          {/* Main Headline with Cinematic Zoom and Staggered Fade */}
+          <div 
+            className="mb-12 transition-transform duration-300 ease-out origin-center"
+            style={{ 
+              transform: `scale(${titleScale})`,
+              willChange: 'transform'
+            }}
+          >
+            <h1 className="font-playfair font-black text-7xl text-black leading-[80px]">
+              <div className="flex flex-wrap justify-center gap-x-4">
+                {headlineWords.map((word, index) => (
+                  <span
+                    key={index}
+                    className="transition-opacity duration-300"
+                    style={{
+                      opacity: getElementOpacity(word.fadeThreshold),
+                      willChange: 'opacity'
+                    }}
+                  >
+                    {word.text}
+                  </span>
+                ))}
+              </div>
+            </h1>
+          </div>
+
+          {/* Paragraph with gradual word fade - Now first */}
+          <div 
+            className="mb-16 transition-all duration-300 ease-out origin-center"
+            style={{ 
+              transform: `scale(${titleScale})`,
+              opacity: getElementOpacity(heroElements.paragraph.fadeThreshold),
+              willChange: 'transform, opacity'
+            }}
+          >
+            <p className="font-raleway font-normal text-2xl text-black leading-[38px] max-w-4xl mx-auto">
+              {paragraphWords.map((word, index) => (
                 <span
                   key={index}
                   className="transition-opacity duration-300"
@@ -243,81 +285,71 @@ const CinematicHero = () => {
                     willChange: 'opacity'
                   }}
                 >
-                  {word.text}
+                  {word.text === 'designer,' || word.text === 'builder,' || word.text === 'AI' || word.text === 'educator' ? (
+                    <span className="text-design-pink">{word.text}</span>
+                  ) : (
+                    word.text
+                  )}
+                  {index < paragraphWords.length - 1 && ' '}
                 </span>
               ))}
-            </div>
-            <div className="flex flex-wrap justify-center gap-x-4">
-              {headlineWords.slice(4).map((word, index) => (
+            </p>
+          </div>
+
+          {/* Interactive word section - Now second */}
+          <div 
+            className="transition-all duration-300 ease-out origin-center"
+            style={{ 
+              transform: `scale(${titleScale})`,
+              opacity: getElementOpacity(heroElements.interactiveWords.fadeThreshold),
+              willChange: 'transform, opacity'
+            }}
+          >
+            <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
+              {words.map((word, index) => (
                 <span
-                  key={index + 4}
-                  className="transition-opacity duration-300"
+                  key={index}
+                  className={`word-highlight ${word.isActive ? 'active' : ''} ${
+                    isComplete ? 'opacity-100' : ''
+                  }`}
                   style={{
-                    opacity: getElementOpacity(word.fadeThreshold),
-                    willChange: 'opacity'
+                    animationDelay: `${word.delay}ms`
                   }}
                 >
-                  {word.text}
+                  {word.word}
                 </span>
               ))}
             </div>
-          </h1>
-        </div>
-
-        {/* Interactive word section */}
-        <div 
-          className="mb-16 transition-all duration-300 ease-out origin-center"
-          style={{ 
-            transform: `scale(${titleScale})`,
-            opacity: getElementOpacity(heroElements.interactiveWords.fadeThreshold),
-            willChange: 'transform, opacity'
-          }}
-        >
-          <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
-            {words.map((word, index) => (
-              <span
-                key={index}
-                className={`word-highlight ${word.isActive ? 'active' : ''} ${
-                  isComplete ? 'opacity-100' : ''
-                }`}
-                style={{
-                  animationDelay: `${word.delay}ms`
-                }}
-              >
-                {word.word}
-              </span>
-            ))}
           </div>
-          
-        </div>
-
-        {/* Byline */}
-        <div 
-          className="text-white ft-caption transition-all duration-300 ease-out origin-center"
-          style={{ 
-            transform: `scale(${titleScale})`,
-            opacity: getElementOpacity(heroElements.byline.fadeThreshold),
-            willChange: 'transform, opacity'
-          }}
-        >
-          <p className="mb-2">
-            By <span className="text-ft-salmon font-medium">Lovable</span> and <span className="text-ft-salmon font-medium">Anna Arteeva</span> in München, Germany
-          </p>
-          <p>July 14 2025</p>
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-300 ease-out origin-center"
-        style={{ 
-          transform: `translateX(-50%) scale(${titleScale})`,
-          opacity: getElementOpacity(heroElements.scrollIndicator.fadeThreshold),
-          willChange: 'transform, opacity'
-        }}
-      >
-        <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
+      {/* Navigation positioned at bottom */}
+      <div className="pb-8 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <div 
+            className="transition-all duration-300 ease-out origin-center"
+            style={{ 
+              transform: `scale(${titleScale})`,
+              opacity: getElementOpacity(heroElements.navigation.fadeThreshold),
+              willChange: 'transform, opacity'
+            }}
+          >
+            <div className="flex flex-row gap-7 items-center justify-center text-lg text-black font-playfair font-medium">
+              <div className="cursor-pointer hover:text-design-pink transition-colors duration-300">
+                Blog
+              </div>
+              <div className="cursor-pointer hover:text-design-pink transition-colors duration-300">
+                AI courses
+              </div>
+              <div className="cursor-pointer hover:text-design-pink transition-colors duration-300">
+                Portfolio
+              </div>
+              <div className="cursor-pointer hover:text-design-pink transition-colors duration-300">
+                LinkedIn
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

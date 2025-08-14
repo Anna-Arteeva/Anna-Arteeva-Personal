@@ -181,25 +181,26 @@
   }
 
   .word-highlight {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.05);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 0.5rem 1rem;
     margin: 0.25rem;
     border-radius: 0.5rem;
     display: inline-block;
     transition: all 0.6s ease;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    color: white;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    color: black;
+    font-weight: 500;
   }
 
   .word-highlight.active {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(238, 79, 142, 0.1);
     backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(238, 79, 142, 0.2);
     transform: scale(1.05);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-    color: white;
+    box-shadow: 0 12px 40px rgba(238, 79, 142, 0.15);
+    color: #ee4f8e;
   }
 
   /* FT specific animations */

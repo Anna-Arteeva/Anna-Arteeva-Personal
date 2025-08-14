@@ -18,6 +18,11 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'playfair': ['Playfair Display', 'serif'],
+				'allura': ['Allura', 'cursive'],
+				'raleway': ['Raleway', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -68,7 +73,9 @@ export default {
 					cream: 'hsl(var(--ft-cream))',
 					brown: 'hsl(var(--ft-brown))',
 					'light-brown': 'hsl(var(--ft-light-brown))'
-				}
+				},
+				'design-pink': '#ee4f8e',
+				'design-bg': '#f9f3f5'
 			},
 			fontSize: {
 				'ft-giant': 'var(--headline-giant)',
