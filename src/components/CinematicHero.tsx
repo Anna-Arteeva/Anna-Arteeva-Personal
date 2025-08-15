@@ -236,8 +236,12 @@ const CinematicHero = () => {
       {/* Theme Toggle Button */}
       <button
         onClick={toggleTheme}
-        className="absolute bottom-5 right-5 z-30 word-highlight cursor-pointer px-2 hover:scale-105 transition-all duration-300"
+        className="transition-all duration-300 absolute bottom-5 right-5 z-30 word-highlight cursor-pointer px-2 hover:scale-105 transition-all duration-300"
         aria-label="Toggle theme"
+            style={{ 
+              opacity: getElementOpacity(heroElements.navigation.fadeThreshold),
+              willChange: 'transform, opacity'
+            }}
       >
         {isDark ? (
           <Sun className="w-5 h-5" />
@@ -372,7 +376,6 @@ const CinematicHero = () => {
           <div 
             className="transition-all duration-300 ease-out origin-center"
             style={{ 
-              transform: `scale(${titleScale})`,
               opacity: getElementOpacity(heroElements.navigation.fadeThreshold),
               willChange: 'transform, opacity'
             }}
