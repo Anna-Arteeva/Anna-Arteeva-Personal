@@ -236,7 +236,7 @@ const CinematicHero = () => {
       {/* Theme Toggle Button */}
       <button
         onClick={toggleTheme}
-        className="absolute bottom-8 right-8 z-30 word-highlight cursor-pointer hover:scale-105 transition-all duration-300"
+        className="absolute bottom-5 right-5 z-30 word-highlight cursor-pointer px-2 hover:scale-105 transition-all duration-300"
         aria-label="Toggle theme"
       >
         {isDark ? (

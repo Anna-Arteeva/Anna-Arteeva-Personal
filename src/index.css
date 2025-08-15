@@ -287,18 +287,31 @@
   /* Fluid typography for navigation (hero + footer) */
   section.bg-design-bg.rounded-2xl.m-4 .font-playfair.font-medium.text-lg,
   footer .font-playfair.font-medium.text-lg {
-    font-size: clamp(1rem, 3.5vw, 1.125rem);
+    font-size: clamp(.85rem, 3vw, 1.125rem);
     line-height: clamp(1.4em, 4vw, 1.75em);
+  }
+  @media (max-width: 640px) {
+    section.bg-design-bg.rounded-2xl.m-4 .font-playfair.font-medium.text-lg {
+      gap: 1.2rem;
+      margin-right: 4rem;
+    }
   }
 }
 
 @layer base {
-  /* Move theme toggle to top-right on mobile to avoid overlapping the menu */
+  /* Hide interactive word chips (AI, SaaS, FinTech, B2B) on mobile */
   @media (max-width: 640px) {
-    section.bg-design-bg.rounded-2xl.m-4 > button.word-highlight {
-      top: 1rem;
-      right: 1rem;
-      bottom: auto;
+    section.bg-design-bg.rounded-2xl.m-4 span.word-highlight {
+      display: none;
     }
   }
+}
+
+@layer base {
+  /* Make hero section 90vh on mobile */
+  
+    section.bg-design-bg.rounded-2xl.m-4 {
+      min-height: calc(100vh - 2rem) !important; /* override min-h-screen */
+    }
+  
 }
