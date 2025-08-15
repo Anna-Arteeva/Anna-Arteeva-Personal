@@ -308,10 +308,26 @@
 }
 
 @layer base {
-  /* Make hero section 90vh on mobile */
-  
+  /* Ensure hero fits the visible viewport on all devices (handles mobile browser UI bars) */
+  section.bg-design-bg.rounded-2xl.m-4 {
+    /* Fallback */
+    min-height: calc(100vh - 2rem);
+    /* iOS/Android modern browsers */
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  /* Prefer small viewport height if supported */
+  @supports (height: 100svh) {
     section.bg-design-bg.rounded-2xl.m-4 {
-      min-height: calc(100vh - 2rem) !important; /* override min-h-screen */
+      min-height: calc(100dvh - 2rem);
     }
-  
+  }
+
+  /* Use dynamic viewport height when available (best option) */
+  @supports (height: 100dvh) {
+    section.bg-design-bg.rounded-2xl.m-4 {
+      min-height: calc(100dvh - 2rem);
+    }
+  }
+ 
 }
