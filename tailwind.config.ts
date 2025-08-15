@@ -74,8 +74,8 @@ export default {
 					brown: 'hsl(var(--ft-brown))',
 					'light-brown': 'hsl(var(--ft-light-brown))'
 				},
-				'design-pink': '#ee4f8e',
-				'design-bg': '#f9f3f5'
+				'design-pink': 'hsl(var(--design-pink))',
+				'design-bg': 'hsl(var(--design-bg))'
 			},
 			fontSize: {
 				'ft-giant': 'var(--headline-giant)',

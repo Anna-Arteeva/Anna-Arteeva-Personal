@@ -6,33 +6,23 @@
 
 @layer base {
   :root {
-    /* FT Color palette */
-    --background: 23 13% 95%;
+    /* Light theme colors */
+    --background: 0 0% 100%;
     --foreground: 0 0% 12%;
-
-    --card: 23 13% 95%;
+    --card: 0 0% 100%;
     --card-foreground: 0 0% 12%;
-
-    --popover: 23 13% 95%;
+    --popover: 0 0% 100%;
     --popover-foreground: 0 0% 12%;
-
-    /* FT signature salmon/pink */
     --primary: 336 82% 62%;
     --primary-foreground: 0 0% 100%;
-
-    /* FT secondary colors */
     --secondary: 23 20% 88%;
     --secondary-foreground: 0 0% 12%;
-
     --muted: 23 20% 88%;
     --muted-foreground: 0 0% 40%;
-
     --accent: 336 82% 62%;
     --accent-foreground: 0 0% 100%;
-
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-
     --border: 23 20% 82%;
     --input: 23 20% 82%;
     --ring: 336 82% 62%;
@@ -43,6 +33,10 @@
     --ft-cream: 23 13% 95%;
     --ft-brown: 23 20% 25%;
     --ft-light-brown: 23 20% 70%;
+
+    /* Design colors */
+    --design-pink: 336 82% 62%;
+    --design-bg: 23 13% 95%;
 
     /* Typography scale */
     --headline-giant: 4.5rem;
@@ -55,56 +49,47 @@
     --radius: 0.25rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
+    /* Dark theme colors - inverted */
     --background: 0 0% 8%;
     --foreground: 0 0% 95%;
-
     --card: 0 0% 8%;
     --card-foreground: 0 0% 95%;
-
     --popover: 0 0% 8%;
     --popover-foreground: 0 0% 95%;
-
     --primary: 336 82% 62%;
     --primary-foreground: 0 0% 100%;
-
     --secondary: 0 0% 15%;
     --secondary-foreground: 0 0% 95%;
-
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 65%;
-
     --accent: 336 82% 62%;
     --accent-foreground: 0 0% 100%;
-
     --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 98%;
-
     --border: 0 0% 20%;
     --input: 0 0% 20%;
     --ring: 336 82% 62%;
 
+    /* FT specific colors - inverted */
     --ft-salmon: 336 82% 62%;
     --ft-charcoal: 0 0% 95%;
     --ft-cream: 0 0% 8%;
     --ft-brown: 0 0% 85%;
     --ft-light-brown: 0 0% 40%;
+
+    /* Design colors - inverted */
+    --design-pink: 336 82% 75%;
+    --design-bg: 0 0% 8%;
 
     --sidebar-background: 0 0% 8%;
     --sidebar-foreground: 0 0% 95%;
@@ -190,8 +175,15 @@
     display: inline-block;
     transition: all 0.6s ease;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
-    color: black;
+    color: hsl(var(--foreground));
     font-weight: 500;
+  }
+
+  .dark .word-highlight {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    color: hsl(var(--foreground));
   }
 
   .word-highlight.active {
@@ -201,6 +193,21 @@
     transform: scale(1.05);
     box-shadow: 0 12px 40px rgba(238, 79, 142, 0.15);
     color: #ee4f8e;
+  }
+
+  .dark .word-highlight.active {
+    background: rgba(238, 79, 142, 0.2);
+    border: 1px solid rgba(238, 79, 142, 0.3);
+    box-shadow: 0 12px 40px rgba(238, 79, 142, 0.3);
+  }
+
+  /* Highlighted words in paragraph */
+  .text-design-pink {
+    color: hsl(var(--design-pink)) !important;
+  }
+
+  .dark .text-design-pink {
+    color: hsl(var(--design-pink)) !important;
   }
 
   /* FT specific animations */

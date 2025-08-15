@@ -1,6 +1,6 @@
 
 import { useEffect, useState, useCallback } from "react";
-import { Play } from "lucide-react";
+import { Play, Sun, Moon } from "lucide-react";
 
 interface WordHighlight {
   word: string;
@@ -13,6 +13,35 @@ const CinematicHero = () => {
   const [isComplete, setIsComplete] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [titleScale, setTitleScale] = useState(1);
+  const [isDark, setIsDark] = useState(false);
+
+  // Theme management
+  useEffect(() => {
+    // Check for saved theme preference or default to system preference
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+      setIsDark(true);
+      document.documentElement.classList.add('dark');
+    } else {
+      setIsDark(false);
+      document.documentElement.classList.remove('dark');
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = !isDark;
+    setIsDark(newTheme);
+    
+    if (newTheme) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  };
 
   // Main headline words with staggered fade priorities
   const headlineWords = [
@@ -203,7 +232,20 @@ const CinematicHero = () => {
   }, []);
 
   return (
-    <section className="min-h-screen bg-design-bg relative overflow-hidden flex flex-col">
+    <section className="min-h-screen relative overflow-hidden flex flex-col bg-design-bg rounded-2xl m-4">
+      {/* Theme Toggle Button */}
+      <button
+        onClick={toggleTheme}
+        className="absolute bottom-8 right-8 z-30 word-highlight cursor-pointer hover:scale-105 transition-all duration-300"
+        aria-label="Toggle theme"
+      >
+        {isDark ? (
+          <Sun className="w-5 h-5" />
+        ) : (
+          <Moon className="w-5 h-5" />
+        )}
+      </button>
+
       {/* Name and Subtitle positioned at top */}
       <div className="pt-8 px-4 text-center">
         <div className="max-w-4xl mx-auto">
@@ -216,7 +258,7 @@ const CinematicHero = () => {
               willChange: 'transform, opacity'
             }}
           >
-            <h2 className="font-playfair font-black text-3xl text-black leading-none">
+            <h2 className="font-playfair font-black text-3xl text-black dark:text-white leading-none">
               Anna Arteeva
             </h2>
           </div>
@@ -230,7 +272,7 @@ const CinematicHero = () => {
               willChange: 'transform, opacity'
             }}
           >
-            <p className="font-allura text-2xl text-black leading-none">
+            <p className="font-allura text-2xl text-black dark:text-white leading-none">
               Designer and Design Leader
             </p>
           </div>
@@ -248,7 +290,7 @@ const CinematicHero = () => {
               willChange: 'transform'
             }}
           >
-            <h1 className="font-playfair font-black text-7xl text-black leading-[80px]">
+            <h1 className="font-playfair font-black text-7xl text-black dark:text-white leading-[80px]">
               <div className="flex flex-wrap justify-center gap-x-4">
                 {headlineWords.map((word, index) => (
                   <span
@@ -266,7 +308,7 @@ const CinematicHero = () => {
             </h1>
           </div>
 
-          {/* Paragraph with gradual word fade - Now first */}
+          {/* Paragraph with gradual word fade */}
           <div 
             className="mb-16 transition-all duration-300 ease-out origin-center"
             style={{ 
@@ -275,7 +317,7 @@ const CinematicHero = () => {
               willChange: 'transform, opacity'
             }}
           >
-            <p className="font-raleway font-normal text-2xl text-black leading-[38px] max-w-4xl mx-auto">
+            <p className="font-raleway font-normal text-2xl text-black dark:text-white leading-[38px] max-w-4xl mx-auto">
               {paragraphWords.map((word, index) => (
                 <span
                   key={index}
@@ -296,7 +338,7 @@ const CinematicHero = () => {
             </p>
           </div>
 
-          {/* Interactive word section - Now second */}
+          {/* Interactive word section */}
           <div 
             className="transition-all duration-300 ease-out origin-center"
             style={{ 
@@ -335,19 +377,29 @@ const CinematicHero = () => {
               willChange: 'transform, opacity'
             }}
           >
-            <div className="flex flex-row gap-7 items-center justify-center text-lg text-black font-playfair font-medium">
-              <div className="cursor-pointer hover:text-design-pink transition-colors duration-300">
+            <div className="flex flex-row gap-7 items-center justify-center text-lg text-black dark:text-white font-playfair font-medium">
+              <a 
+                href="https://medium.com/@annaarteeva" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="cursor-pointer hover:text-design-pink transition-colors duration-300"
+              >
                 Blog
-              </div>
+              </a>
               <div className="cursor-pointer hover:text-design-pink transition-colors duration-300">
                 AI courses
               </div>
               <div className="cursor-pointer hover:text-design-pink transition-colors duration-300">
                 Portfolio
               </div>
-              <div className="cursor-pointer hover:text-design-pink transition-colors duration-300">
+              <a 
+                href="https://www.linkedin.com/in/annaarteeva/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="cursor-pointer hover:text-design-pink transition-colors duration-300"
+              >
                 LinkedIn
-              </div>
+              </a>
             </div>
           </div>
         </div>
