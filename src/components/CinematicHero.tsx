@@ -288,7 +288,7 @@ const CinematicHero = () => {
         <div className="max-w-4xl mx-auto text-center relative z-20">
           {/* Main Headline with Cinematic Zoom and Staggered Fade */}
           <div 
-            className="mb-12 transition-transform duration-300 ease-out origin-center"
+            className="mb-8 transition-transform duration-300 ease-out origin-center"
             style={{ 
               transform: `scale(${titleScale})`,
               willChange: 'transform'
@@ -389,9 +389,12 @@ const CinematicHero = () => {
               >
                 Blog
               </a>
-              <div className="cursor-pointer hover:text-design-pink transition-colors duration-300">
+              <a 
+                href="/ai-courses"
+                className="cursor-pointer hover:text-design-pink transition-colors duration-300"
+              >
                 AI courses
-              </div>
+              </a>
               <div className="cursor-pointer hover:text-design-pink transition-colors duration-300">
                 Portfolio
               </div>
