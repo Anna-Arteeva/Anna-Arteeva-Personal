@@ -261,3 +261,44 @@
     will-change: transform;
   }
 }
+
+@layer base {
+  /* Fluid typography for hero section (font-size only) */
+  section.bg-design-bg.rounded-2xl.m-4 h1.font-playfair.text-7xl {
+    font-size: clamp(2.25rem, 9vw, 4.5rem);
+    line-height: clamp(1.05em, 6vw, 1.2em);
+  }
+
+  section.bg-design-bg.rounded-2xl.m-4 h2.font-playfair.text-3xl {
+    font-size: clamp(1.375rem, 5.5vw, 1.875rem);
+    line-height: clamp(1.05em, 4.5vw, 1.2em);
+  }
+
+  section.bg-design-bg.rounded-2xl.m-4 p.font-allura.text-2xl {
+    font-size: clamp(1.125rem, 4.5vw, 1.5rem);
+    line-height: clamp(1.1em, 4.5vw, 1.3em);
+  }
+
+  section.bg-design-bg.rounded-2xl.m-4 p.font-raleway.font-normal.text-2xl {
+    font-size: clamp(1rem, 4.5vw, 1.5rem);
+    line-height: clamp(1.45em, 5vw, 1.7em);
+  }
+
+  /* Fluid typography for navigation (hero + footer) */
+  section.bg-design-bg.rounded-2xl.m-4 .font-playfair.font-medium.text-lg,
+  footer .font-playfair.font-medium.text-lg {
+    font-size: clamp(1rem, 3.5vw, 1.125rem);
+    line-height: clamp(1.4em, 4vw, 1.75em);
+  }
+}
+
+@layer base {
+  /* Move theme toggle to top-right on mobile to avoid overlapping the menu */
+  @media (max-width: 640px) {
+    section.bg-design-bg.rounded-2xl.m-4 > button.word-highlight {
+      top: 1rem;
+      right: 1rem;
+      bottom: auto;
+    }
+  }
+}
