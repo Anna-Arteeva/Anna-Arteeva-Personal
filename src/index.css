@@ -331,3 +331,10 @@
   }
  
 }
+
+@layer base {
+  /* Prevent hero navigation from zooming/scaling on scroll */
+  section.bg-design-bg.rounded-2xl.m-4 > .pb-8.px-4 .transition-all.duration-300.ease-out.origin-center {
+    transform: none !important;
+  }
+}
