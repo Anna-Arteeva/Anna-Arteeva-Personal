@@ -22,7 +22,6 @@ const MainNav = () => {
       <Link to="/ai-courses" className={linkClass(isActive('/ai-courses'))}>
         AI courses
       </Link>
-      <span className={linkClass(false)}>Portfolio</span>
       <a 
         href="https://www.linkedin.com/in/annaarteeva/" 
         target="_blank" 

@@ -15,7 +15,7 @@ const Card = ({
   duration: string;
   price: string;
   description: string;
-  sessions: string[];
+  sessions: { label: string; href?: string }[];
   ctaHref: string;
 }) => (
   <div className="rounded-2xl bg-design-bg pt-6 px-6 flex flex-col">
@@ -26,16 +26,27 @@ const Card = ({
     <ul className="space-y-4 mb-6">
       {sessions.map((s, i) => (
         <li key={i} className="flex items-center justify-between">
-          <span className="font-raleway text-black dark:text-white">{s}</span>
-          <button
-            type="button"
-            disabled
-            aria-disabled="true"
-            className="px-4 py-2 rounded-xl bg-black text-white dark:bg-white dark:text-black font-playfair opacity-50 cursor-not-allowed"
-            title="Enrollment temporarily disabled"
-          >
-            Enroll
-          </button>
+          <span className="font-raleway text-black dark:text-white">{s.label}</span>
+          {s.href ? (
+            <a
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 rounded-xl bg-black text-white dark:bg-white dark:text-black font-playfair hover:opacity-90 transition"
+            >
+              Enroll
+            </a>
+          ) : (
+            <button
+              type="button"
+              disabled
+              aria-disabled="true"
+              className="px-4 py-2 rounded-xl bg-black text-white dark:bg-white dark:text-black font-playfair opacity-50 cursor-not-allowed"
+              title="Enrollment temporarily disabled"
+            >
+              Enroll
+            </button>
+          )}
         </li>
       ))}
     </ul>
@@ -85,17 +96,24 @@ const AICourseList = () => {
             duration="4 Days"
             price="€349"
             description="A comprehensive, hands-on course for UX/UI/Product designers and product managers to build and refine advanced, interactive AI-powered prototypes that feel production-ready — no coding required."
-            sessions={["15–19 September", "13–17 October", "1-4 December"]}
-            ctaHref="/ai-prototyping-mastery"
+            sessions={[
+              { label: "15–19 September", href: "https://ti.to/push/ai-prototyping-september-2025" },
+              { label: "13–17 October", href: "https://ti.to/push/ai-prototyping-october-2025" },
+              { label: "1-4 December", href: "https://ti.to/push/ai-prototyping-december-2025" },
+            ]}
+            ctaHref="https://push-skills.com/ai-powered-prototyping-for-designers-and-product-managers"
           />
 
           <Card
             title="Prototyping AI Products"
             duration="2 Days"
             price="€349"
-            description="An advanced AI prototyping course for designers and product managers who want to build functional, interactive prototypes powered by real AI logic — no coding required."
-            sessions={["29 September, 1 October", "8, 10 December"]}
-            ctaHref="/prototyping-ai-products"
+            description="An advanced AI prototyping course for designers and product managers who want to build functional, interactive prototypes with integrated AI models for text, audio and image generation; dynamic data and file storage."
+            sessions={[
+              { label: "29 September, 1 October", href: "https://ti.to/push/ai-products-online-september-2025" },
+              { label: "8, 10 December", href: "https://ti.to/push/ai-products-online-december-2025" },
+            ]}
+            ctaHref="https://push-skills.com/prototyping-ai-products"
           />
         </div>
       </div>

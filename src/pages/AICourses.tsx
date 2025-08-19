@@ -57,7 +57,7 @@ const AICourses = () => {
         <section className="mb-12 p-6 rounded-2xl bg-design-bg">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
-              <p className="font-playfair text-2xl text-black dark:text-white">$1,450 USD</p>
+              <p className="font-playfair text-2xl text-black dark:text-white">from €349 +VAT</p>
               <p className="font-raleway text-sm text-gray-700 dark:text-gray-300">Next cohort: Sep 8—Oct 3, 2025 (Live sessions at 1PM EST)</p>
             </div>
             <div className="flex gap-3">
@@ -85,21 +85,20 @@ const AICourses = () => {
           <h2 className="font-playfair font-bold text-2xl text-black dark:text-white mb-4">Upcoming cohorts</h2>
           <ul className="space-y-4">
             {[
-              "15–19 September",
-              "13–17 October",
-              "1–4 December",
-            ].map((date, i) => (
+              { date: "15–19 September", href: "https://ti.to/push/ai-prototyping-september-2025" },
+              { date: "13–17 October", href: "https://ti.to/push/ai-prototyping-october-2025" },
+              { date: "1–4 December", href: "https://ti.to/push/ai-prototyping-december-2025" },
+            ].map(({ date, href }, i) => (
               <li key={i} className="flex items-center justify-between p-4 rounded-2xl bg-design-bg">
                 <span className="font-raleway text-black dark:text-white">{date}</span>
-                <button
-                  type="button"
-                  disabled
-                  aria-disabled="true"
-                  className="px-4 py-2 rounded-xl bg-black text-white dark:bg-white dark:text-black font-playfair opacity-50 cursor-not-allowed"
-                  title="Enrollment temporarily disabled"
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 rounded-xl bg-black text-white dark:bg-white dark:text-black font-playfair hover:opacity-90 transition"
                 >
                   Enroll
-                </button>
+                </a>
               </li>
             ))}
           </ul>

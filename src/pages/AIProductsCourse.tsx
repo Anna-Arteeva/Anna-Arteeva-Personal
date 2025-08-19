@@ -59,7 +59,7 @@ const AIProductsCourse = () => {
         <section className="mb-12 p-6 rounded-2xl bg-design-bg">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
-              <p className="font-playfair text-2xl text-black dark:text-white">€349</p>
+              <p className="font-playfair text-2xl text-black dark:text-white">from €249 +VAT</p>
               <p className="font-raleway text-sm text-gray-700 dark:text-gray-300">2 Days · Live sessions</p>
             </div>
             <div className="flex gap-3">
@@ -122,18 +122,20 @@ const AIProductsCourse = () => {
         <section className="mb-16">
           <h2 className="font-playfair font-bold text-2xl text-black dark:text-white mb-4">Upcoming cohorts</h2>
           <ul className="space-y-4">
-            {["29 September, 1 October", "8, 10 December"].map((date, i) => (
+            {[
+              { date: "29 September, 1 October", href: "https://ti.to/push/ai-products-online-september-2025" },
+              { date: "8, 10 December", href: "https://ti.to/push/ai-products-online-december-2025" },
+            ].map(({ date, href }, i) => (
               <li key={i} className="flex items-center justify-between p-4 rounded-2xl bg-design-bg">
                 <span className="font-raleway text-black dark:text-white">{date}</span>
-                <button
-                  type="button"
-                  disabled
-                  aria-disabled="true"
-                  className="px-4 py-2 rounded-xl bg-black text-white dark:bg-white dark:text-black font-playfair opacity-50 cursor-not-allowed"
-                  title="Enrollment temporarily disabled"
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 rounded-xl bg-black text-white dark:bg-white dark:text-black font-playfair hover:opacity-90 transition"
                 >
                   Enroll
-                </button>
+                </a>
               </li>
             ))}
           </ul>
