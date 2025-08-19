@@ -395,9 +395,6 @@ const CinematicHero = () => {
               >
                 AI courses
               </a>
-              <div className="cursor-pointer hover:text-design-pink transition-colors duration-300">
-                Portfolio
-              </div>
               <a 
                 href="https://www.linkedin.com/in/annaarteeva/" 
                 target="_blank" 

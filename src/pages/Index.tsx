@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import CinematicHero from "@/components/CinematicHero";
+import MainNav from "@/components/MainNav";
 
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -184,31 +185,7 @@ const Index = () => {
       <footer className="py-16 px-4 border-t border-gray-200 dark:border-gray-800">
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-center">
-            {/* Navigation - same as hero section */}
-            <div className="flex flex-row gap-7 items-center justify-center text-lg text-black dark:text-white font-playfair font-medium">
-              <a 
-                href="https://medium.com/@annaarteeva" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="cursor-pointer hover:text-design-pink transition-colors duration-300"
-              >
-                Blog
-              </a>
-              <div className="cursor-pointer hover:text-design-pink transition-colors duration-300">
-                AI courses
-              </div>
-              <div className="cursor-pointer hover:text-design-pink transition-colors duration-300">
-                Portfolio
-              </div>
-              <a 
-                href="https://www.linkedin.com/in/annaarteeva/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="cursor-pointer hover:text-design-pink transition-colors duration-300"
-              >
-                LinkedIn
-              </a>
-            </div>
+            <MainNav />
           </div>
         </div>
       </footer>
