@@ -1,6 +1,8 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { Play, Sun, Moon } from "lucide-react";
+import MainNav from "./MainNav";
+import SiteBrand from "./SiteBrand";
 
 interface WordHighlight {
   word: string;
@@ -45,39 +47,36 @@ const CinematicHero = () => {
 
   // Main headline words with staggered fade priorities
   const headlineWords = [
-    { text: "Shaping", fadeThreshold: 250 },
-    { text: "tomorrow's", fadeThreshold: 100 },
-    { text: "products,", fadeThreshold: 150 },
-    { text: "today", fadeThreshold: 120 },
+    { text: "Design", fadeThreshold: 250 },
+    { text: "better", fadeThreshold: 100 },
+    { text: "with", fadeThreshold: 150 },
+    { text: "AI", fadeThreshold: 120 },
   ];
 
   // Interactive words for animation
   const heroWords: WordHighlight[] = [
-    { word: "AI", isActive: false, delay: 0 },
+    { word: "AI prototyping", isActive: false, delay: 0 },
     { word: "SaaS", isActive: false, delay: 800 },
     { word: "FinTech", isActive: false, delay: 1600 },
     { word: "B2B", isActive: false, delay: 2400 },
+    { word: "UX for AI", isActive: false, delay: 3000 },
   ];
 
   // Paragraph words for gradual fade out
   const paragraphWords = [
-    { text: "Multi-faceted", fadeThreshold: 80 },
-    { text: "hands-on", fadeThreshold: 100 },
-    { text: "designer,", fadeThreshold: 120 },
-    { text: "product", fadeThreshold: 140 },
-    { text: "builder,", fadeThreshold: 160 },
-    { text: "and", fadeThreshold: 180 },
-    { text: "AI", fadeThreshold: 200 },
-    { text: "educator", fadeThreshold: 220 },
+    { text: "Product", fadeThreshold: 100 },
+    { text: "design leader", fadeThreshold: 120 },
+    { text: "and", fadeThreshold: 140 },
+    { text: "AI coach.", fadeThreshold: 160 },
+    { text: "I train", fadeThreshold: 180 },
+    { text: "teams", fadeThreshold: 200 },
+    { text: "to build", fadeThreshold: 220 },
     { text: "with", fadeThreshold: 240 },
-    { text: "a", fadeThreshold: 260 },
-    { text: "knack", fadeThreshold: 280 },
-    { text: "for", fadeThreshold: 300 },
-    { text: "strategy", fadeThreshold: 320 },
-    { text: "and", fadeThreshold: 340 },
-    { text: "complex", fadeThreshold: 360 },
-    { text: "systems", fadeThreshold: 380 },
-    { text: "design.", fadeThreshold: 400 },
+    { text: "AI", fadeThreshold: 260 },
+    { text: "and", fadeThreshold: 280 },
+    { text: "design", fadeThreshold: 300 },
+    { text: "AI-powered", fadeThreshold: 340 },
+    { text: "products", fadeThreshold: 360 },
   ];
 
   const [words, setWords] = useState(heroWords);
@@ -250,35 +249,18 @@ const CinematicHero = () => {
         )}
       </button>
 
-      {/* Name and Subtitle positioned at top */}
+      {/* Site Brand positioned at top */}
       <div className="pt-8 px-4 text-center">
         <div className="max-w-4xl mx-auto">
-          {/* Name */}
           <div 
-            className="mb-2 transition-all duration-300 ease-out origin-center"
+            className="mb-8 transition-all duration-300 ease-out origin-center"
             style={{ 
               transform: `scale(${titleScale})`,
               opacity: getElementOpacity(heroElements.name.fadeThreshold),
               willChange: 'transform, opacity'
             }}
           >
-            <h2 className="font-playfair font-black text-3xl text-black dark:text-white leading-none">
-              Anna Arteeva
-            </h2>
-          </div>
-
-          {/* Subtitle */}
-          <div 
-            className="mb-8 transition-all duration-300 ease-out origin-center"
-            style={{ 
-              transform: `scale(${titleScale})`,
-              opacity: getElementOpacity(heroElements.subtitle.fadeThreshold),
-              willChange: 'transform, opacity'
-            }}
-          >
-            <p className="font-allura text-2xl text-black dark:text-white leading-none">
-              Designer and Design Leader
-            </p>
+            <SiteBrand align="center" />
           </div>
         </div>
       </div>
@@ -331,7 +313,7 @@ const CinematicHero = () => {
                     willChange: 'opacity'
                   }}
                 >
-                  {word.text === 'designer,' || word.text === 'builder,' || word.text === 'AI' || word.text === 'educator' ? (
+                  {word.text === 'design leader' || word.text === 'AI coach.' || word.text === 'educator' ? (
                     <span className="text-design-pink">{word.text}</span>
                   ) : (
                     word.text
@@ -366,6 +348,22 @@ const CinematicHero = () => {
                 </span>
               ))}
             </div>
+            
+            {/* CTA Buttons */}
+            <div className="flex flex-row gap-4 items-center justify-center mt-8">
+              <a target="_blank" 
+                href="https://www.linkedin.com/in/annaarteeva/"
+                className="px-6 py-3 border-2 border-design-pink bg-design-pink text-white font-playfair font-medium rounded-lg hover:bg-opacity-90 transition-all duration-300 hover:scale-105"
+              >
+                Work with me
+              </a>
+            <a  target="_blank" 
+              href="https://www.linkedin.com/in/annaarteeva/"
+              className="px-6 py-3 border-2 border-design-pink text-design-pink font-playfair font-medium rounded-lg transition-all duration-300 hover:scale-105 hover:bg-design-pink hover:!text-white"
+            >
+              Discuss team training
+            </a>
+            </div>
           </div>
         </div>
       </div>
@@ -380,30 +378,7 @@ const CinematicHero = () => {
               willChange: 'transform, opacity'
             }}
           >
-            <div className="flex flex-row gap-7 items-center justify-center text-lg text-black dark:text-white font-playfair font-medium">
-              <a 
-                href="https://medium.com/@annaarteeva" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="cursor-pointer hover:text-design-pink transition-colors duration-300"
-              >
-                Blog
-              </a>
-              <a 
-                href="/ai-courses"
-                className="cursor-pointer hover:text-design-pink transition-colors duration-300"
-              >
-                AI courses
-              </a>
-              <a 
-                href="https://www.linkedin.com/in/annaarteeva/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="cursor-pointer hover:text-design-pink transition-colors duration-300"
-              >
-                LinkedIn
-              </a>
-            </div>
+            <MainNav />
           </div>
         </div>
       </div>

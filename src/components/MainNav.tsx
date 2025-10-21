@@ -17,11 +17,21 @@ const MainNav = () => {
         rel="noopener noreferrer"
         className={linkClass(false)}
       >
-        Blog
+        Work
       </a>
       <Link to="/ai-courses" className={linkClass(isActive('/ai-courses'))}>
-        AI courses
+      Training & coaching
       </Link>
+
+      <a 
+        href="https://medium.com/@annaarteeva" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className={linkClass(false)}
+      >
+        Blog
+      </a>
+
       <a 
         href="https://www.linkedin.com/in/annaarteeva/" 
         target="_blank" 

@@ -1,0 +1,84 @@
+[
+  {
+    "id": 1,
+    "category": "Design Leadership",
+    "quote": "Anna was a great support to Payoneer the product and a valuable team player. She helped us to define a sturdy product vision and improve the process to execute on it more efficiently. Thanks to her broad experience in various fields, she could zoom out to the big picture and help to connect the dots between Product and Development, at the same time doing delivering excellent design work.",
+    "author": "Stefan Link",
+    "role": "ex CEO & Co-Founder @Pyoneer",
+    "linkedinUrl": "https://www.linkedin.com/in/stefan-link/",
+    "backgroundColor": null
+  },
+  {
+    "id": 2,
+    "category": "Design Leadership",
+    "quote": "I highly recommend Anna for her outstanding leadership as the Head of Product Design at Payoneer, in the Merchant Services Business Unit. In her role, Anna demonstrated remarkable strength in guiding and empowering the design team, advocating for amazing customer experience within our product organization, and driving the development of our products to new heights. As a visionary, Anna's insights and creativity have consistently brought meaningful impact to our offerings and the overall user experience.",
+    "author": "Ofri Avizov",
+    "role": "Group Product Manager at Payoneer",
+    "linkedinUrl": "https://www.linkedin.com/in/avizov/",
+    "backgroundColor": null
+  },
+  {
+    "id": 3,
+    "category": "Design Leadership",
+    "quote": "Anna has proven herself to be an exceptional design leader, driving remarkable achievements within our organization. Anna played an important role in establishing a scalable and empowered cross-functional product domains. From start to finish, she made sure designers were right there in the mix, from opportunity exploration to implementation and beyond. Anna's exceptional standards for quality were contagious, inspiring her team to deliver their best work and strive for greater impact.",
+    "author": "Stefan Buck",
+    "role": "CPO at Payoneer Merchant Services",
+    "linkedinUrl": "https://www.linkedin.com/in/stefan-buck-aaa96b30/",
+    "backgroundColor": null
+  },
+  {
+    "id": 8,
+    "category": "AI training",
+    "quote": "At Flatpay, we already use AI daily to boost research, strategy, writing, and design. Anna Arteeva's AI & UX workshop at our Copenhagen HQ helped us take things further. PMs, designers, and engineers sharpened our AI skills and explored new ground: getting more impact from the tools we already rely on; expanding into AI prototyping, building on our existing designs and design system to deliver higher-fidelity results faster; exploring new UX paradigms like non-deterministic and agentic experiences; and building a shared mindset on how AI will shape the way we create for our merchants. We're raising the bar on how we collaborate with each other—and with AI—to deliver even more impact. Highly recommended.",
+    "author": "Derek Fidler",
+    "role": "Director, Product Strategy & UX @ Flatpay",
+    "linkedinUrl": "https://www.linkedin.com/in/derekfidler/",
+    "backgroundColor": "#F3E2E6"
+  },
+  {
+    "id": 4,
+    "category": "AI training",
+    "quote": "The workshop was very well structured and covered all the essential concepts I needed to start my own project—such as different vibe coding tools, frontend frameworks, database connections, and deployment. Anna really understands designers' concerns, like Figma integration and design systems. After the workshop, I felt supercharged and inspired to start building my own project!",
+    "author": "Leo Chow",
+    "role": "Senior Product Designer | SaaS & B2B",
+    "linkedinUrl": "https://www.linkedin.com/in/chowleo/",
+    "backgroundColor": "#F3E2E6"
+  },
+  {
+    "id": 5,
+    "category": "AI training",
+    "quote": "This course is close to a must-have if you want to stay current and in demand as a designer. The detailed tips and tricks Anna shares clearly come from longer practice and are things that are hard to catch up on quickly as a self-learner.",
+    "author": "Judith Schneidewind",
+    "role": "Digital Product & Experience Designer",
+    "linkedinUrl": "https://www.linkedin.com/in/judith-schneidewind/",
+    "backgroundColor": "#F3E2E6"
+  },
+  {
+    "id": 6,
+    "category": "AI training",
+    "quote": "It will save you a crazy amount time. I was giving little and shy steps into this huge AI ocean and with this course, I could easily understand how to design, refine and generate interactive prototypes (including database integrations) - it's not a scary monster after all.",
+    "author": "Gualter Amaro",
+    "role": "Product Designer at OLX",
+    "linkedinUrl": "https://www.linkedin.com/in/gualteramaro/",
+    "backgroundColor": "#F3E2E6"
+  },
+  {
+    "id": 7,
+    "category": "AI training",
+    "quote": "Still blown away by the workshop. So much packed in (can't wait for the recording to rewatch, especially the second part covering design systems and database integration), almost everything made sense, and most importantly it no longer feels like some mystical thing only available to coding prodigies.",
+    "author": "Ekaterina Chalikova",
+    "role": "UX expert specializing in complex domains",
+    "linkedinUrl": "https://www.linkedin.com/in/ekaterinachalikova/",
+    "backgroundColor": "#F3E2E6"
+  },
+  {
+    "id": 9,
+    "category": "AI training",
+    "quote": "Perfect balance of intensive content with helpful tutorials we can revisit later and practice after the course. We learned how to build both frontend and backend, connect to databases, and work with real data - not just static prototypes but ones that actually store and use the information users enter. Even explained coding terminology in a way that made sense to us non-developers.",
+    "author": "Florencia Willams",
+    "role": "Senior UX Designer",
+    "linkedinUrl": "https://www.linkedin.com/in/florencia-willams-8844a55a/",
+    "backgroundColor": "#F3E2E6"
+  }
+]
+
