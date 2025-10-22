@@ -1,9 +1,11 @@
 import { useRef, useEffect, useState } from "react";
 import testimonialsData from "../data/testimonials.json";
+import { useIsMobile } from "../hooks/use-mobile";
 
 const Testimonials = () => {
   const testimonialsRef = useRef<HTMLDivElement>(null);
   const [testimonialsProgress, setTestimonialsProgress] = useState(0);
+  const isMobile = useIsMobile();
 
   // Smooth clamp utility
   const clamp = (value: number, min: number, max: number) => {
@@ -29,6 +31,12 @@ const Testimonials = () => {
   };
 
   useEffect(() => {
+    // Only enable scroll animations on desktop
+    if (isMobile) {
+      setTestimonialsProgress(1); // Set to full visibility on mobile
+      return;
+    }
+
     const updateProgress = () => {
       setTestimonialsProgress(getScrollProgress(testimonialsRef));
     };
@@ -36,7 +44,7 @@ const Testimonials = () => {
     updateProgress();
     window.addEventListener('scroll', updateProgress);
     return () => window.removeEventListener('scroll', updateProgress);
-  }, []);
+  }, [isMobile]);
 
   // Derive animation values
   const deriveStyles = (progress: number) => {
@@ -65,8 +73,8 @@ const Testimonials = () => {
           style={{
             opacity: testimonialsAnim.text.opacity,
             transform: `translateY(${testimonialsAnim.text.translateY}px)`,
-            transition: "opacity 300ms ease, transform 520ms cubic-bezier(0.4, 0, 0.2, 1)",
-            willChange: "opacity, transform",
+            transition: isMobile ? "none" : "opacity 300ms ease, transform 520ms cubic-bezier(0.4, 0, 0.2, 1)",
+            willChange: isMobile ? "auto" : "opacity, transform",
           }}
         >
           What People Say
@@ -78,8 +86,8 @@ const Testimonials = () => {
           style={{
             opacity: testimonialsAnim.text.opacity,
             transform: `translateY(${testimonialsAnim.text.translateY + 8}px)`,
-            transition: "opacity 320ms ease, transform 540ms cubic-bezier(0.4, 0, 0.2, 1)",
-            willChange: "opacity, transform",
+            transition: isMobile ? "none" : "opacity 320ms ease, transform 540ms cubic-bezier(0.4, 0, 0.2, 1)",
+            willChange: isMobile ? "auto" : "opacity, transform",
           }}
         >
           {testimonialsData.map((testimonial) => {

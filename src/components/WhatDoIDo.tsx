@@ -1,9 +1,11 @@
 import { ArrowRight } from "lucide-react";
 import { useRef, useEffect, useState } from "react";
+import { useIsMobile } from "../hooks/use-mobile";
 
 const WhatDoIDo = () => {
   const leadershipRef = useRef<HTMLDivElement>(null);
   const aiTrainingRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
 
   // Smooth clamp utility to avoid branching noise
   const clamp = (value: number, min: number, max: number) => {
@@ -29,6 +31,9 @@ const WhatDoIDo = () => {
   };
 
   useEffect(() => {
+    // Only enable scroll animations on desktop
+    if (isMobile) return;
+
     const handleScroll = () => {
       // Trigger re-render on scroll for opacity calculations
       requestAnimationFrame(() => {
@@ -40,12 +45,19 @@ const WhatDoIDo = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isMobile]);
 
   const [leadershipProgress, setLeadershipProgress] = useState(0);
   const [aiTrainingProgress, setAiTrainingProgress] = useState(0);
 
   useEffect(() => {
+    // Only enable scroll animations on desktop
+    if (isMobile) {
+      setLeadershipProgress(1); // Set to full visibility on mobile
+      setAiTrainingProgress(1); // Set to full visibility on mobile
+      return;
+    }
+
     const updateOpacity = () => {
       setLeadershipProgress(getScrollProgress(leadershipRef));
       setAiTrainingProgress(getScrollProgress(aiTrainingRef));
@@ -54,7 +66,7 @@ const WhatDoIDo = () => {
     updateOpacity();
     window.addEventListener('scroll', updateOpacity);
     return () => window.removeEventListener('scroll', updateOpacity);
-  }, []);
+  }, [isMobile]);
 
   // Derive animation values (background slower, text a bit faster and later)
   const deriveStyles = (progress: number) => {
@@ -93,8 +105,8 @@ const WhatDoIDo = () => {
           style={{
             opacity: leadershipAnim.bg.opacity,
             transform: `translateY(${leadershipAnim.bg.translateY}px)`,
-            transition: "opacity 280ms ease, transform 450ms cubic-bezier(0.4, 0, 0.2, 1)",
-            willChange: "opacity, transform",
+            transition: isMobile ? "none" : "opacity 280ms ease, transform 450ms cubic-bezier(0.4, 0, 0.2, 1)",
+            willChange: isMobile ? "auto" : "opacity, transform",
           }}
           aria-hidden="true"
         />
@@ -107,8 +119,8 @@ const WhatDoIDo = () => {
             style={{
               opacity: leadershipAnim.text.opacity,
               transform: `translateY(${leadershipAnim.text.translateY}px)`,
-              transition: "opacity 300ms ease, transform 520ms cubic-bezier(0.4, 0, 0.2, 1)",
-              willChange: "opacity, transform",
+              transition: isMobile ? "none" : "opacity 300ms ease, transform 520ms cubic-bezier(0.4, 0, 0.2, 1)",
+              willChange: isMobile ? "auto" : "opacity, transform",
             }}
           >
             Design Leadership
@@ -118,8 +130,8 @@ const WhatDoIDo = () => {
             style={{
               opacity: clamp(leadershipAnim.text.opacity - 0.05, 0, 1),
               transform: `translateY(${leadershipAnim.text.translateY + 4}px)`,
-              transition: "opacity 320ms ease, transform 540ms cubic-bezier(0.4, 0, 0.2, 1)",
-              willChange: "opacity, transform",
+              transition: isMobile ? "none" : "opacity 320ms ease, transform 540ms cubic-bezier(0.4, 0, 0.2, 1)",
+              willChange: isMobile ? "auto" : "opacity, transform",
             }}
           >
             Hands-on design leadership: org design, UX strategy, workflow design, team coaching and upskilling, and design systems.
@@ -130,8 +142,8 @@ const WhatDoIDo = () => {
             style={{
               opacity: clamp(leadershipAnim.text.opacity - 0.1, 0, 1),
               transform: `translateY(${leadershipAnim.text.translateY + 6}px)`,
-              transition: "opacity 340ms ease, transform 560ms cubic-bezier(0.4, 0, 0.2, 1)",
-              willChange: "opacity, transform",
+              transition: isMobile ? "none" : "opacity 340ms ease, transform 560ms cubic-bezier(0.4, 0, 0.2, 1)",
+              willChange: isMobile ? "auto" : "opacity, transform",
             }}
           >
             Leadership Portfolio
@@ -152,8 +164,8 @@ const WhatDoIDo = () => {
           style={{
             opacity: aiTrainingAnim.bg.opacity,
             transform: `translateY(${aiTrainingAnim.bg.translateY}px)`,
-            transition: "opacity 280ms ease, transform 450ms cubic-bezier(0.4, 0, 0.2, 1)",
-            willChange: "opacity, transform",
+            transition: isMobile ? "none" : "opacity 280ms ease, transform 450ms cubic-bezier(0.4, 0, 0.2, 1)",
+            willChange: isMobile ? "auto" : "opacity, transform",
           }}
           aria-hidden="true"
         />
@@ -165,8 +177,8 @@ const WhatDoIDo = () => {
             style={{
               opacity: aiTrainingAnim.text.opacity,
               transform: `translateY(${aiTrainingAnim.text.translateY}px)`,
-              transition: "opacity 300ms ease, transform 520ms cubic-bezier(0.4, 0, 0.2, 1)",
-              willChange: "opacity, transform",
+              transition: isMobile ? "none" : "opacity 300ms ease, transform 520ms cubic-bezier(0.4, 0, 0.2, 1)",
+              willChange: isMobile ? "auto" : "opacity, transform",
             }}
           >
             AI training for Design and Product teams
@@ -176,8 +188,8 @@ const WhatDoIDo = () => {
             style={{
               opacity: clamp(aiTrainingAnim.text.opacity - 0.05, 0, 1),
               transform: `translateY(${aiTrainingAnim.text.translateY + 4}px)`,
-              transition: "opacity 320ms ease, transform 540ms cubic-bezier(0.4, 0, 0.2, 1)",
-              willChange: "opacity, transform",
+              transition: isMobile ? "none" : "opacity 320ms ease, transform 540ms cubic-bezier(0.4, 0, 0.2, 1)",
+              willChange: isMobile ? "auto" : "opacity, transform",
             }}
           >
             I run practical workshops and coaching programmes that upskill your team in AI, AI prototyping and UX for AI products.
