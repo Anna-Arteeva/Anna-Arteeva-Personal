@@ -200,8 +200,8 @@ const WhatDoIDo = () => {
             style={{
               opacity: clamp(aiTrainingAnim.text.opacity - 0.1, 0, 1),
               transform: `translateY(${aiTrainingAnim.text.translateY + 6}px)`,
-              transition: "opacity 340ms ease, transform 560ms cubic-bezier(0.4, 0, 0.2, 1)",
-              willChange: "opacity, transform",
+              transition: isMobile ? "none" : "opacity 340ms ease, transform 560ms cubic-bezier(0.4, 0, 0.2, 1)",
+              willChange: isMobile ? "auto" : "opacity, transform",
             }}
           >
             Learn more about AI upskilling
