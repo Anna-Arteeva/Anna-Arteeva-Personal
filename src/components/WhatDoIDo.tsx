@@ -170,7 +170,7 @@ const WhatDoIDo = () => {
           aria-hidden="true"
         />
 
-        <div className="max-w-xl text-right">
+        <div className="max-w-xl text-left md:text-right">
           <h2 
             id="ai-training-heading"
             className="font-playfair font-black text-3xl lg:text-5xl text-black dark:text-white mb-4 lg:mb-6 leading-tight"
