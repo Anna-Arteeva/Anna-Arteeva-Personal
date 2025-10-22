@@ -3,6 +3,7 @@ import { useRef, useEffect, useState } from "react";
 import SiteBrand from "@/components/SiteBrand";
 import MainNav from "@/components/MainNav";
 import Logger from "@/components/Logger";
+import WorkshopContact from "@/components/WorkshopContact";
 
 const Card = ({
   title,
@@ -116,6 +117,7 @@ const AICourseList = () => {
   const trainingTitleOpacity = getElementOpacity(trainingTitleRef);
   const trainingOpacities = trainingRefs.current.map(ref => getElementOpacity(ref));
 
+        
   return (
     <main className="py-20 px-4">
       <Logger event="page_view" data={{ page: 'ai_courses' }} />
@@ -127,11 +129,22 @@ const AICourseList = () => {
           </div>
         </div>
 
-        <h1 className="font-playfair font-black text-4xl md:text-5xl text-black dark:text-white mb-12 mt-24 text-center">
-          Upcoming Cohorts on Push Skills
+        <h1 className="font-playfair font-black text-4xl md:text-5xl text-black dark:text-white mb-8 mt-24 text-center">
+          AI training
         </h1>
+        <p className="font-raleway text-gray-800 dark:text-gray-200 text-center text-2xl mb-12 max-w-5xl mx-auto">
+          I run  
+          <span className="font-semibold text-design-pink"> cohort-based </span> and 
+          <span className="font-semibold text-design-pink"> in-house </span> workshops tailored to your team’s needs. Topics include AI foundations (how models work and how to use AI productively), UX for AI-powered products, and hands-on AI prototyping to build crisp and functional experiences.
+        </p>
 
-        <div className="grid md:grid-cols-2 gap-8 items-start">
+<div className="border-t border-gray-200 dark:border-gray-800 my-12"></div>
+
+        <h2 className="font-playfair font-black text-3xl md:text-4xl text-black dark:text-white mb-12 mt-24 text-center">
+          Upcoming Cohorts on Push Skills
+        </h2>
+
+        <div className=" mx-auto grid md:grid-cols-2 gap-8 items-start">
           <Card
             title="AI prototyping mastery"
             duration="4 Days"
@@ -162,7 +175,7 @@ const AICourseList = () => {
           <div className="max-w-2xl mx-auto">
             <h2 
               ref={trainingTitleRef}
-              className="font-playfair font-black text-4xl md:text-5xl text-black dark:text-white mb-12 mt-24 text-center"
+              className="font-playfair font-black text-3xl md:text-4xl text-black dark:text-white mb-12 mt-24 text-center"
          style={{ opacity: trainingTitleOpacity }}
             >
               Tailored Team Trainings
@@ -322,6 +335,16 @@ const AICourseList = () => {
           </div>
         </div>
       </div>
+      
+      <WorkshopContact />
+      
+      <footer className="py-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex justify-center">
+            <MainNav />
+          </div>
+        </div>
+      </footer>
     </main>
   );
 };

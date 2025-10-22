@@ -1,29 +1,32 @@
 [
   {
     "id": 1,
-    "category": "Design Leadership",
-    "quote": "Anna was a great support to Payoneer the product and a valuable team player. She helped us to define a sturdy product vision and improve the process to execute on it more efficiently. Thanks to her broad experience in various fields, she could zoom out to the big picture and help to connect the dots between Product and Development, at the same time doing delivering excellent design work.",
-    "author": "Stefan Link",
-    "role": "ex CEO & Co-Founder @Pyoneer",
-    "linkedinUrl": "https://www.linkedin.com/in/stefan-link/",
-    "backgroundColor": null
-  },
-  {
-    "id": 2,
-    "category": "Design Leadership",
-    "quote": "I highly recommend Anna for her outstanding leadership as the Head of Product Design at Payoneer, in the Merchant Services Business Unit. In her role, Anna demonstrated remarkable strength in guiding and empowering the design team, advocating for amazing customer experience within our product organization, and driving the development of our products to new heights. As a visionary, Anna's insights and creativity have consistently brought meaningful impact to our offerings and the overall user experience.",
-    "author": "Ofri Avizov",
-    "role": "Group Product Manager at Payoneer",
-    "linkedinUrl": "https://www.linkedin.com/in/avizov/",
-    "backgroundColor": null
-  },
-  {
-    "id": 3,
-    "category": "Design Leadership",
+    "category": "Design & Leadership",
     "quote": "Anna has proven herself to be an exceptional design leader, driving remarkable achievements within our organization. Anna played an important role in establishing a scalable and empowered cross-functional product domains. From start to finish, she made sure designers were right there in the mix, from opportunity exploration to implementation and beyond. Anna's exceptional standards for quality were contagious, inspiring her team to deliver their best work and strive for greater impact.",
     "author": "Stefan Buck",
     "role": "CPO at Payoneer Merchant Services",
     "linkedinUrl": "https://www.linkedin.com/in/stefan-buck-aaa96b30/",
+    "profileImage": "https://media.licdn.com/dms/image/v2/D4D03AQHf1cuAq2wGrQ/profile-displayphoto-shrink_800_800/B4DZX3hF8aG4Ac-/0/1743614402970?e=1762992000&v=beta&t=9hWHcMfbuq9jbHA047ulZXtEJTVw2psDWj2ioeUOdqc",
+    "backgroundColor": null
+  },
+  {
+    "id": 2,
+    "category": "Design & Leadership",
+    "quote": "I highly recommend Anna for her outstanding leadership as the Head of Product Design at Payoneer, in the Merchant Services Business Unit. In her role, Anna demonstrated remarkable strength in guiding and empowering the design team, advocating for amazing customer experience within our product organization, and driving the development of our products to new heights. As a visionary, Anna's insights and creativity have consistently brought meaningful impact to our offerings and the overall user experience.",
+    "author": "Ofri Avizov",
+    "role": "Group Product Manager at Payoneer",
+    "linkedinUrl": "https://www.linkedin.com/in/avizov/",
+    "profileImage": "https://media.licdn.com/dms/image/v2/D4D03AQHLGeqFCWcUNQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731521376795?e=1762992000&v=beta&t=gbI9vR5es9K22eTo5q-1tw2M4mCIzKLzYQwgqhWsep4",
+    "backgroundColor": null
+  },
+  {
+    "id": 3,
+    "category": "Design & Leadership",
+    "quote": "Anna was a great support to Payoneer the product and a valuable team player. She helped us to define a sturdy product vision and improve the process to execute on it more efficiently. Thanks to her broad experience in various fields, she could zoom out to the big picture and help to connect the dots between Product and Development, at the same time doing delivering excellent design work.",
+    "author": "Stefan Link",
+    "role": "ex CEO & Co-Founder @Pyoneer",
+    "linkedinUrl": "https://www.linkedin.com/in/stefan-link/",
+    "profileImage": "https://media.licdn.com/dms/image/v2/D4D03AQGidPGi4H3qLw/profile-displayphoto-shrink_800_800/B4DZSD4KN8G4Ac-/0/1737379325265?e=1762992000&v=beta&t=aLg5Rt_vQ27G9GJcbbG1ezxhzsoJm7K-0xL9NHsqgm4",
     "backgroundColor": null
   },
   {
@@ -33,7 +36,8 @@
     "author": "Derek Fidler",
     "role": "Director, Product Strategy & UX @ Flatpay",
     "linkedinUrl": "https://www.linkedin.com/in/derekfidler/",
-    "backgroundColor": "#F3E2E6"
+    "profileImage": "https://media.licdn.com/dms/image/v2/D4E03AQGzZgm5gp_5sw/profile-displayphoto-shrink_800_800/B4EZOvpHt6HkAo-/0/1733818613072?e=1762992000&v=beta&t=DKqAe6TwxapOFCw3I8WSsfE0VUrzzq1Jqcc03jq4_II",
+    "backgroundColor": "design-bg-pink"
   },
   {
     "id": 4,
@@ -42,7 +46,8 @@
     "author": "Leo Chow",
     "role": "Senior Product Designer | SaaS & B2B",
     "linkedinUrl": "https://www.linkedin.com/in/chowleo/",
-    "backgroundColor": "#F3E2E6"
+    "profileImage": "https://media.licdn.com/dms/image/v2/D4E03AQEKonftwZAdvg/profile-displayphoto-shrink_800_800/B4EZZcqdZwHoAc-/0/1745311357091?e=1762992000&v=beta&t=57UKyFuoQ48uAi3mKdQ14p79Q1Nv0kbSifJdC7o7q5o",
+    "backgroundColor": "design-bg-pink"
   },
   {
     "id": 5,
@@ -51,7 +56,8 @@
     "author": "Judith Schneidewind",
     "role": "Digital Product & Experience Designer",
     "linkedinUrl": "https://www.linkedin.com/in/judith-schneidewind/",
-    "backgroundColor": "#F3E2E6"
+    "profileImage": "https://media.licdn.com/dms/image/v2/D4E03AQEyooMo-ad08w/profile-displayphoto-crop_800_800/B4EZkuA9i_HEAI-/0/1757413628820?e=1762992000&v=beta&t=f25dFUG3mnOnSh9PxdJXsDfHskbyKpjXHeL1qyKVsbU",
+    "backgroundColor": "design-bg-pink"
   },
   {
     "id": 6,
@@ -60,7 +66,8 @@
     "author": "Gualter Amaro",
     "role": "Product Designer at OLX",
     "linkedinUrl": "https://www.linkedin.com/in/gualteramaro/",
-    "backgroundColor": "#F3E2E6"
+    "profileImage": "https://media.licdn.com/dms/image/v2/C5103AQFM4BHqIElaxg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516357467828?e=1762992000&v=beta&t=CDccef-am5jWKITv3PPx2JvRIbh1Goq7C6oXiZsoJoI",
+    "backgroundColor": "design-bg-pink"
   },
   {
     "id": 7,
@@ -69,7 +76,8 @@
     "author": "Ekaterina Chalikova",
     "role": "UX expert specializing in complex domains",
     "linkedinUrl": "https://www.linkedin.com/in/ekaterinachalikova/",
-    "backgroundColor": "#F3E2E6"
+    "profileImage": "https://media.licdn.com/dms/image/v2/D4E03AQH1Yhmftp6U8w/profile-displayphoto-shrink_800_800/B4EZb8X3SWGQAc-/0/1747990836774?e=1762992000&v=beta&t=_XvQBAT41j7HbePt1MfF3ezSShVSWb5eZ7XyaMuF4A8",
+    "backgroundColor": "design-bg-pink"
   },
   {
     "id": 9,
@@ -78,7 +86,8 @@
     "author": "Florencia Willams",
     "role": "Senior UX Designer",
     "linkedinUrl": "https://www.linkedin.com/in/florencia-willams-8844a55a/",
-    "backgroundColor": "#F3E2E6"
+    "profileImage": "https://media.licdn.com/dms/image/v2/D4D35AQHPoZQ308DeUQ/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1728568936405?e=1761728400&v=beta&t=wVOfFAWR9VM6sSB_gSImy-pjsPc73VhVAM24IjTsun0",
+    "backgroundColor": "design-bg-pink"
   }
 ]
 

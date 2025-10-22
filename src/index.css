@@ -36,7 +36,8 @@
 
     /* Design colors */
     --design-pink: 336 82% 62%;
-    --design-bg: 23 13% 95%;
+    --design-bg: 20 34% 52% / 0.1;
+    --design-bg-pink: 340 63% 55% / 0.1;
 
     /* Typography scale */
     --headline-giant: 4.5rem;
@@ -89,7 +90,8 @@
 
     /* Design colors - inverted */
     --design-pink: 336 82% 75%;
-    --design-bg: 0 0% 8%;
+    --design-bg: 20 34% 52% / 0.1;
+    --design-bg-pink: 340 63% 55% / 0.1;
 
     --sidebar-background: 0 0% 8%;
     --sidebar-foreground: 0 0% 95%;
@@ -208,6 +210,15 @@
 
   .dark .text-design-pink {
     color: hsl(var(--design-pink)) !important;
+  }
+
+  /* Background utility classes */
+  .bg-design-bg-pink {
+    background-color: hsl(var(--design-bg-pink));
+  }
+
+  .bg-design-bg {
+    background-color: hsl(var(--design-bg));
   }
 
   /* FT specific animations */

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import SiteBrand from "@/components/SiteBrand";
 import MainNav from "@/components/MainNav";
 import Logger from "@/components/Logger";
+import AITrainingsHero from "@/components/AITrainingsHero";
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -11,7 +12,7 @@ import {
   BreadcrumbPage,
 } from "@/components/ui/breadcrumb";
 
-const AICourses = () => {
+const AITraining = () => {
   return (
     <main className="py-20 px-4">
       <Logger event="page_view" data={{ page: 'ai_prototyping_mastery' }} />
@@ -22,6 +23,9 @@ const AICourses = () => {
             <MainNav />
           </div>
         </div>
+        {/* AI Trainings hero */}
+        <AITrainingsHero />
+
         <div className="mb-24 mt-8">
           <Breadcrumb>
             <BreadcrumbList>
@@ -266,6 +270,6 @@ const AICourses = () => {
   );
 };
 
-export default AICourses;
+export default AITraining;
 
 

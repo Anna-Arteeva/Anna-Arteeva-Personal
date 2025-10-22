@@ -11,16 +11,8 @@ const MainNav = () => {
 
   return (
     <nav className="flex flex-row gap-7 items-center justify-center text-lg">
-      <a 
-        href="https://medium.com/@annaarteeva" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className={linkClass(false)}
-      >
-        Work
-      </a>
       <Link to="/ai-courses" className={linkClass(isActive('/ai-courses'))}>
-      Training & coaching
+      AI training
       </Link>
 
       <a 

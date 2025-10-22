@@ -47,10 +47,10 @@ const CinematicHero = () => {
 
   // Main headline words with staggered fade priorities
   const headlineWords = [
-    { text: "Design", fadeThreshold: 250 },
-    { text: "better", fadeThreshold: 100 },
-    { text: "with", fadeThreshold: 150 },
-    { text: "AI", fadeThreshold: 120 },
+    { text: "Hi,", fadeThreshold: 250 },
+    { text: "I", fadeThreshold: 100 },
+    { text: "am", fadeThreshold: 150 },
+    { text: "Anna", fadeThreshold: 120 },
   ];
 
   // Interactive words for animation
@@ -353,16 +353,11 @@ const CinematicHero = () => {
             <div className="flex flex-row gap-4 items-center justify-center mt-8">
               <a target="_blank" 
                 href="https://www.linkedin.com/in/annaarteeva/"
-                className="px-6 py-3 border-2 border-design-pink bg-design-pink text-white font-playfair font-medium rounded-lg hover:bg-opacity-90 transition-all duration-300 hover:scale-105"
+                className="px-6 py-3 border-2 border-design-pink bg-design-pink text-white font-playfair font-medium rounded-xl
+                 hover:bg-opacity-90 transition-all duration-300 hover:scale-105"
               >
-                Work with me
+                Get in touch
               </a>
-            <a  target="_blank" 
-              href="https://www.linkedin.com/in/annaarteeva/"
-              className="px-6 py-3 border-2 border-design-pink text-design-pink font-playfair font-medium rounded-lg transition-all duration-300 hover:scale-105 hover:bg-design-pink hover:!text-white"
-            >
-              Discuss team training
-            </a>
             </div>
           </div>
         </div>
