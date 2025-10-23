@@ -100,13 +100,7 @@ const AI = () => {
                   AI foundations and literacy
                 </h3>
                 <p className="font-raleway text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-4">
-                  I train non-technical and technical teams in the essentials: what current AI can and cannot do, common failure modes, safety basics, evaluation, and where AI fits in day-to-day work.
-                </p>
-                <p className="font-raleway text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-4">
-                  Your team will learn to select use cases, write effective prompts, review outputs with simple evaluation methods, and set guardrails.
-                </p>
-                <p className="font-raleway text-lg text-gray-800 dark:text-gray-200 leading-relaxed">
-                  <span className="font-semibold">Outcomes</span> repeatable practices, shared vocabulary, lower risk.
+                  Understand different AI models and where and how to get the most out of them, how to prompt like a pro for different use cases for AI productivity, as well as making system prompts for your product features. Explore practical tools such as ChatGPT, Google AI Studio, NotebookLM, ElevenLabs, Midjourney, Stable Diffusion, Wispr Flow, Cursor, and Lovable, and understand when to use them in your research, ideation, and product-building process.
                 </p>
               </div>
 
@@ -120,13 +114,7 @@ const AI = () => {
                   UX for AI-powered products
                 </h3>
                 <p className="font-raleway text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-4">
-                  This workshop teaches patterns for non-deterministic systems. We cover prompt UX, feedback loops, error states, transparency, data boundaries, and how to measure quality over time.
-                </p>
-                <p className="font-raleway text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-4">
-                  Your team will learn to design flows that set expectations, recover gracefully, and improve with real usage.
-                </p>
-                <p className="font-raleway text-lg text-gray-800 dark:text-gray-200 leading-relaxed">
-                  <span className="font-semibold">Outcomes</span> safer experiences, clearer behaviour, measurable quality.
+                  It's one thing to use AI in your workflow; another to design for AI-powered products. UX and behaviour patterns are changing; they are no longer deterministic, nor linear, and not even purely visual. Voice, vision, and haptic interactions are becoming must-haves and must be designed alongside visual UI. Command-based interfaces are being replaced with outcome-based ones, where instead of navigating filters and forms you can tell the product what you want to achieve. Ultimately, we now build products not only for human users but also for agentic users. This leads to a redefinition of the design role itself: instead of creating visual assets in visual tools, designers are becoming orchestrators of the invisible.
                 </p>
               </div>
 
@@ -140,13 +128,7 @@ const AI = () => {
                   AI prototyping and vibe-coding
                 </h3>
                 <p className="font-raleway text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-4">
-                  A hands-on build session. I teach "vibe-coding" to get from idea to working prototype in minutes. We use modern UI stacks with AI tools so teams ship UI and logic, not just pictures.
-                </p>
-                <p className="font-raleway text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-4">
-                  Your team will learn to scaffold an app, wire prompts, mock data, and test flows quickly to align stakeholders.
-                </p>
-                <p className="font-raleway text-lg text-gray-800 dark:text-gray-200 leading-relaxed">
-                  <span className="font-semibold">Outcomes</span> functional demos, faster decisions, earlier learning.
+                  And that brings us to prototyping with AI. Building functional apps and features takes design to the next level, starting with elevating craft and allowing us to take care of things that were not available in conventional products, such as micro-interactions, more nuanced responsiveness, and deeper personalisation. It improves handoff and reduces the amount lost in translation, as we hand off chunks of code instead of annotated images. Ultimately, it allows us to design across more modalities, such as voice, vision, and gestures (haptic), with real data and functionality, connecting AI models.
                 </p>
               </div>
             </div>
@@ -169,7 +151,7 @@ const AI = () => {
           </h2>
         
         <p className="font-raleway text-gray-800 dark:text-gray-200 text-center text-lg mb-12 max-w-4xl mx-auto">
-          This workshop is designed specifically for tech professionals who are already familiar with standard tools and workflows. It's grounded in the real-world challenges of working in teams—navigating design systems and brand guidelines, collaborating effectively, and integrating with existing assets and infrastructure.
+          This training is designed for tech professionals who already work with standard tools and workflows. It is grounded in real-world challenges: navigating design systems and brand guidelines, collaborating across functions, and integrating with existing assets and infrastructure.
         </p>
 
         <div className="grid md:grid-cols-4 gap-6 mb-12">
@@ -180,7 +162,7 @@ const AI = () => {
               Design smarter. Test faster. Handoff smoother.
             </p>
             <p className="font-raleway text-gray-600 dark:text-gray-300">
-              Create impactful designs and validate them with real, functional prototypes — making developer handoff more efficient.
+              Create impactful designs and validate them with functional prototypes that include micro-interactions, responsiveness, and personalisation. Design non-deterministic, multimodal flows and hand off running code instead of annotated images.
             </p>
           </div>
 
@@ -188,10 +170,10 @@ const AI = () => {
 
             <h3 className="font-playfair font-black text-2xl text-black dark:text-white mb-2">Product</h3>
             <p className="font-raleway font-semibold text-gray-800 dark:text-gray-200 mb-3">
-              Validate ideas with real data — not assumptions.
+              Validate ideas with real behaviour, not assumptions.
             </p>
             <p className="font-raleway text-gray-600 dark:text-gray-300">
-              Test concepts quickly and affordably using functional prototypes instead of static mockups. Get meaningful insights sooner.
+              Test concepts quickly and affordably using working prototypes rather than static mockups. Choose the right AI use cases, define outcomes and guardrails, and measure quality over time to get meaningful insights sooner.
             </p>
           </div>
 
@@ -202,7 +184,7 @@ const AI = () => {
               Move fast. Experiment. Adapt to your audience.
             </p>
             <p className="font-raleway text-gray-600 dark:text-gray-300">
-              Build engaging landing pages and interactive dashboards and mini-apps. Test messaging and adjust content — without waiting on dev.
+              Build engaging landing pages, dashboards, and mini-apps with AI-assisted workflows. Test messaging and personalisation with real interactions, then adjust content without waiting on development.
             </p>
           </div>
 
@@ -210,10 +192,10 @@ const AI = () => {
 
             <h3 className="font-playfair font-black text-2xl text-black dark:text-white mb-2">Engineers</h3>
             <p className="font-raleway font-semibold text-gray-800 dark:text-gray-200 mb-3">
-              Get working prototypes with component structure instead of abstract requirements
+              Get working prototypes with component structure, not abstract requirements.
             </p>
             <p className="font-raleway text-gray-600 dark:text-gray-300">
-              Reuse actual code patterns for faster implementation. Shape solutions early instead of just implementing finished designs.
+              Reuse concrete code patterns and prompts for faster implementation. Shape solutions earlier with design, reduce ambiguity, and cut rework by aligning around running prototypes.
             </p>
           </div>
         </div>
