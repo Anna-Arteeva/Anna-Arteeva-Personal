@@ -5,8 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import AITraining from "./pages/AITraining";
-import AICourseList from "./pages/AICourseList";
+import AI from "./pages/ai";
 import AIProductsCourse from "./pages/AIProductsCourse";
 
 const queryClient = new QueryClient();
@@ -19,8 +18,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/ai-courses" element={<AICourseList />} />
-          <Route path="/ai-training" element={<AITraining />} />
+          <Route path="/ai" element={<AI />} />
           <Route path="/prototyping-ai-products" element={<AIProductsCourse />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

@@ -11,7 +11,7 @@ const MainNav = () => {
 
   return (
     <nav className="flex flex-row gap-7 items-center justify-center text-lg">
-      <Link to="/ai-courses" className={linkClass(isActive('/ai-courses'))}>
+      <Link to="/ai" className={linkClass(isActive('/ai'))}>
       AI training
       </Link>
 

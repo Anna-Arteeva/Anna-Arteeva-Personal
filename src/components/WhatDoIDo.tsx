@@ -195,7 +195,7 @@ const WhatDoIDo = () => {
             I run practical workshops and coaching programmes that upskill your team in AI, AI prototyping and UX for AI products.
           </p>
           <a
-            href="/ai-courses"
+            href="/ai"
             className="inline-flex items-center gap-2 font-playfair font-medium text-lg lg:text-xl text-black dark:text-white hover:text-design-pink dark:hover:text-design-pink transition-colors duration-300 group"
             style={{
               opacity: clamp(aiTrainingAnim.text.opacity - 0.1, 0, 1),

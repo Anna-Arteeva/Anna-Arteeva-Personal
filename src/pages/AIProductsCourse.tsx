@@ -34,7 +34,7 @@ const AIProductsCourse = () => {
               <BreadcrumbSeparator />
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link to="/ai-courses">AI Courses</Link>
+                  <Link to="/ai">AI Courses</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
@@ -166,7 +166,7 @@ const AIProductsCourse = () => {
 
         {/* Back to Courses */}
         <div className="text-center">
-          <Link to="/ai-courses" className="font-playfair text-black dark:text-white hover:text-design-pink transition-colors">
+          <Link to="/ai" className="font-playfair text-black dark:text-white hover:text-design-pink transition-colors">
             ← Back to AI Courses
           </Link>
         </div>
