@@ -1,8 +1,9 @@
 
 import { useEffect, useState, useCallback } from "react";
-import { Play, Sun, Moon } from "lucide-react";
+import { Play } from "lucide-react";
 import MainNav from "./MainNav";
 import SiteBrand from "./SiteBrand";
+import ThemeToggle from "./ThemeToggle";
 
 interface WordHighlight {
   word: string;
@@ -15,35 +16,6 @@ const CinematicHero = () => {
   const [isComplete, setIsComplete] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [titleScale, setTitleScale] = useState(1);
-  const [isDark, setIsDark] = useState(false);
-
-  // Theme management
-  useEffect(() => {
-    // Check for saved theme preference or default to system preference
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-      setIsDark(true);
-      document.documentElement.classList.add('dark');
-    } else {
-      setIsDark(false);
-      document.documentElement.classList.remove('dark');
-    }
-  }, []);
-
-  const toggleTheme = () => {
-    const newTheme = !isDark;
-    setIsDark(newTheme);
-    
-    if (newTheme) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
-  };
 
   // Main headline words with staggered fade priorities
   const headlineWords = [
@@ -233,21 +205,10 @@ const CinematicHero = () => {
   return (
     <section className="min-h-screen relative overflow-hidden flex flex-col bg-design-bg rounded-2xl m-4">
       {/* Theme Toggle Button */}
-      <button
-        onClick={toggleTheme}
-        className="transition-all duration-300 absolute bottom-5 right-5 z-30 word-highlight cursor-pointer px-2 hover:scale-105 transition-all duration-300"
-        aria-label="Toggle theme"
-            style={{ 
-              opacity: getElementOpacity(heroElements.navigation.fadeThreshold),
-              willChange: 'transform, opacity'
-            }}
-      >
-        {isDark ? (
-          <Sun className="w-5 h-5" />
-        ) : (
-          <Moon className="w-5 h-5" />
-        )}
-      </button>
+      <ThemeToggle
+        className="absolute bottom-5 right-5 z-30"
+        opacity={getElementOpacity(heroElements.navigation.fadeThreshold)}
+      />
 
       {/* Site Brand positioned at top */}
       <div className="pt-8 px-4 text-center">

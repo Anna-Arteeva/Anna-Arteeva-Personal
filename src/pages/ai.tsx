@@ -6,6 +6,7 @@ import Logger from "@/components/Logger";
 import WorkshopContact from "@/components/WorkshopContact";
 import PushCohorts from "@/components/PushCohorts";
 import TrainingTypes from "@/components/TrainingTypes";
+import ThemeToggle from "@/components/ThemeToggle";
 
 
 const AI = () => {
@@ -47,8 +48,14 @@ const AI = () => {
 
         
   return (
-    <main className="py-20 px-4">
+    <main className="py-12 px-4 relative">
       <Logger event="page_view" data={{ page: 'ai_courses' }} />
+      
+      {/* Theme Toggle Button */}
+      <ThemeToggle
+        className="absolute top-5 right-5 z-30"
+      />
+      
       <div className="max-w-6xl mx-auto">
         <div className="mb-16 text-center">
           <SiteBrand />
@@ -155,10 +162,9 @@ const AI = () => {
           </div>
         </section>
         
-        <div className="border-t border-gray-200 dark:border-gray-800 my-12"></div>
 
-        <section className="max-w-6xl mx-auto py-10">
-          <h2 className="font-playfair font-black text-3xl md:text-4xl text-black dark:text-white mb-12 mt-24 text-center">
+        <section className="max-w-6xl mx-auto py-5">
+          <h2 className="font-playfair font-black text-3xl md:text-4xl text-black dark:text-white mb-12 text-center">
             Who is it for?
           </h2>
         
@@ -167,7 +173,7 @@ const AI = () => {
         </p>
 
         <div className="grid md:grid-cols-4 gap-6 mb-12">
-          <div className="rounded-2xl bg-white dark:bg-gray-900 p-6 shadow-sm border border-gray-200 dark:border-gray-800">
+          <div className="rounded-2xl  bg-design-bg  p-6 shadow-sm  ">
 
             <h3 className="font-playfair font-black text-2xl text-black dark:text-white mb-2">UX</h3>
             <p className="font-raleway font-semibold text-gray-800 dark:text-gray-200 mb-3">
@@ -178,7 +184,7 @@ const AI = () => {
             </p>
           </div>
 
-          <div className="rounded-2xl bg-white dark:bg-gray-900 p-6 shadow-sm border border-gray-200 dark:border-gray-800">
+          <div className="rounded-2xl  bg-design-bg  p-6 shadow-sm  ">
 
             <h3 className="font-playfair font-black text-2xl text-black dark:text-white mb-2">Product</h3>
             <p className="font-raleway font-semibold text-gray-800 dark:text-gray-200 mb-3">
@@ -189,7 +195,7 @@ const AI = () => {
             </p>
           </div>
 
-          <div className="rounded-2xl bg-white dark:bg-gray-900 p-6 shadow-sm border border-gray-200 dark:border-gray-800">
+          <div className="rounded-2xl  bg-design-bg  p-6 shadow-sm  ">
 
             <h3 className="font-playfair font-black text-2xl text-black dark:text-white mb-2">Marketing</h3>
             <p className="font-raleway font-semibold text-gray-800 dark:text-gray-200 mb-3">
@@ -200,7 +206,7 @@ const AI = () => {
             </p>
           </div>
 
-          <div className="rounded-2xl bg-white dark:bg-gray-900 p-6 shadow-sm border border-gray-200 dark:border-gray-800">
+          <div className="rounded-2xl  bg-design-bg  p-6 shadow-sm ">
 
             <h3 className="font-playfair font-black text-2xl text-black dark:text-white mb-2">Engineers</h3>
             <p className="font-raleway font-semibold text-gray-800 dark:text-gray-200 mb-3">
@@ -213,12 +219,13 @@ const AI = () => {
         </div>
         </section>
 
-    <section className="max-w-6xl mx-auto py-10">
+    <section className="max-w-6xl mx-auto py-10 mb-20">
         <PushCohorts />
     </section>
+
       <WorkshopContact />
       
-      <footer className="py-16 px-4">
+      <footer className="my-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-center">
             <MainNav />

@@ -112,39 +112,27 @@ const WhatDoIDo = () => {
         />
 
         {/* Content layer */}
-        <div className="max-w-xl text-left">
+        <div 
+          className="max-w-xl text-left"
+          style={{
+            opacity: leadershipAnim.text.opacity,
+            transform: `translateY(${leadershipAnim.text.translateY}px)`,
+            transition: isMobile ? "none" : "opacity 300ms ease, transform 520ms cubic-bezier(0.4, 0, 0.2, 1)",
+            willChange: isMobile ? "auto" : "opacity, transform",
+          }}
+        >
           <h2 
             id="design-leadership-heading"
             className="font-playfair font-black text-3xl lg:text-5xl text-black dark:text-white mb-4 lg:mb-6 leading-tight"
-            style={{
-              opacity: leadershipAnim.text.opacity,
-              transform: `translateY(${leadershipAnim.text.translateY}px)`,
-              transition: isMobile ? "none" : "opacity 300ms ease, transform 520ms cubic-bezier(0.4, 0, 0.2, 1)",
-              willChange: isMobile ? "auto" : "opacity, transform",
-            }}
           >
             Design Leadership
           </h2>
-          <p
-            className="font-raleway text-lg lg:text-xl text-black dark:text-white mb-6 lg:mb-8 leading-relaxed"
-            style={{
-              opacity: clamp(leadershipAnim.text.opacity - 0.05, 0, 1),
-              transform: `translateY(${leadershipAnim.text.translateY + 4}px)`,
-              transition: isMobile ? "none" : "opacity 320ms ease, transform 540ms cubic-bezier(0.4, 0, 0.2, 1)",
-              willChange: isMobile ? "auto" : "opacity, transform",
-            }}
-          >
+          <p className="font-raleway text-lg lg:text-xl text-black dark:text-white mb-6 lg:mb-8 leading-relaxed">
             Hands-on design leadership: org design, UX strategy, workflow design, team coaching and upskilling, and design systems.
           </p>
           <a
             href="#leadership-portfolio"
             className="inline-flex items-center gap-2 font-playfair font-medium text-lg lg:text-xl text-black dark:text-white hover:text-design-pink dark:hover:text-design-pink transition-colors duration-300 group"
-            style={{
-              opacity: clamp(leadershipAnim.text.opacity - 0.1, 0, 1),
-              transform: `translateY(${leadershipAnim.text.translateY + 6}px)`,
-              transition: isMobile ? "none" : "opacity 340ms ease, transform 560ms cubic-bezier(0.4, 0, 0.2, 1)",
-              willChange: isMobile ? "auto" : "opacity, transform",
-            }}
           >
             Leadership Portfolio
             <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -170,39 +158,27 @@ const WhatDoIDo = () => {
           aria-hidden="true"
         />
 
-        <div className="max-w-xl text-left md:text-right">
+        <div 
+          className="max-w-xl text-left md:text-right"
+          style={{
+            opacity: aiTrainingAnim.text.opacity,
+            transform: `translateY(${aiTrainingAnim.text.translateY}px)`,
+            transition: isMobile ? "none" : "opacity 300ms ease, transform 520ms cubic-bezier(0.4, 0, 0.2, 1)",
+            willChange: isMobile ? "auto" : "opacity, transform",
+          }}
+        >
           <h2 
             id="ai-training-heading"
             className="font-playfair font-black text-3xl lg:text-5xl text-black dark:text-white mb-4 lg:mb-6 leading-tight"
-            style={{
-              opacity: aiTrainingAnim.text.opacity,
-              transform: `translateY(${aiTrainingAnim.text.translateY}px)`,
-              transition: isMobile ? "none" : "opacity 300ms ease, transform 520ms cubic-bezier(0.4, 0, 0.2, 1)",
-              willChange: isMobile ? "auto" : "opacity, transform",
-            }}
           >
             AI training for Design and Product teams
           </h2>
-          <p
-            className="font-raleway text-lg lg:text-xl text-black dark:text-white mb-6 lg:mb-8 leading-relaxed"
-            style={{
-              opacity: clamp(aiTrainingAnim.text.opacity - 0.05, 0, 1),
-              transform: `translateY(${aiTrainingAnim.text.translateY + 4}px)`,
-              transition: isMobile ? "none" : "opacity 320ms ease, transform 540ms cubic-bezier(0.4, 0, 0.2, 1)",
-              willChange: isMobile ? "auto" : "opacity, transform",
-            }}
-          >
+          <p className="font-raleway text-lg lg:text-xl text-black dark:text-white mb-6 lg:mb-8 leading-relaxed">
             I run practical workshops and coaching programmes that upskill your team in AI, AI prototyping and UX for AI products.
           </p>
           <a
             href="/ai"
             className="inline-flex items-center gap-2 font-playfair font-medium text-lg lg:text-xl text-black dark:text-white hover:text-design-pink dark:hover:text-design-pink transition-colors duration-300 group"
-            style={{
-              opacity: clamp(aiTrainingAnim.text.opacity - 0.1, 0, 1),
-              transform: `translateY(${aiTrainingAnim.text.translateY + 6}px)`,
-              transition: isMobile ? "none" : "opacity 340ms ease, transform 560ms cubic-bezier(0.4, 0, 0.2, 1)",
-              willChange: isMobile ? "auto" : "opacity, transform",
-            }}
           >
             Learn more about AI upskilling
             <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
