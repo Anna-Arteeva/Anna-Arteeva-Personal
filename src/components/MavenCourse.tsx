@@ -4,7 +4,7 @@ const MavenCourse = () => {
       <div className="rounded-2xl bg-vibe-gradient overflow-hidden">
         <div className="grid md:grid-cols-2 gap-8 items-center p-12 md:p-16 " >
           {/* Left side - Content */}
-          <div className="space-y-6">
+          <div className="space-y-6 order-2 md:order-1">
             {/* Maven logo */}
             <div className="flex items-center gap-3 mb-6">
               <img 
@@ -48,14 +48,14 @@ const MavenCourse = () => {
           </div>
 
           {/* Right side - Speaker image */}
-          <div className="relative flex justify-center md:justify-end">
+          <div className="relative flex md:justify-center sm:justify-start order-1 md:order-2">
             <div className="relative">
               {/* Image container */}
-              <div className="relative w-[21rem] h-[21rem] md:w-[22rem] md:h-[22rem] lg:w-[23rem] lg:h-[23rem]">
+              <div className="relative w-[14rem] h-[14rem] md:w-[22rem] md:h-[22rem] lg:w-[23rem] lg:h-[23rem]">
                 <img 
                   src="/avatars/anna-arteeva-maven.png" 
                   alt="Anna Arteeva" 
-                  className="w-full h-full object-contain"
+                  className="md:w-full h-full object-contain"
                 />
               </div>
             </div>
