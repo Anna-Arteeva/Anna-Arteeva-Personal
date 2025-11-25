@@ -75,7 +75,7 @@ const MavenCourse = () => {
               </p>
             </div>
             <a
-              href="https://maven.com/anna-arteeva/vibe-coding-for-designers"
+              href="https://maven.com/anna-arteeva/prototyping-for-designers"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 rounded-xl bg-black text-white dark:bg-white dark:text-black font-playfair font-medium text-base md:text-lg hover:opacity-90 transition flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-design-pink inline-flex items-center gap-2"
