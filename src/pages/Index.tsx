@@ -6,6 +6,7 @@ import MavenCourse from "@/components/MavenCourse";
 import TrainingTypes from "@/components/TrainingTypes";
 import TrainingTopics from "@/components/TrainingTopics";
 import TargetAudience from "@/components/TargetAudience";
+import CustomerLogos from "@/components/CustomerLogos";
 
 const Index = () => {
 
@@ -16,6 +17,7 @@ const Index = () => {
       <TrainingTypes />
       <TrainingTopics />
       <TargetAudience />
+      <CustomerLogos />
       <Testimonials />
 
       {/* Footer */}
