@@ -1,6 +1,6 @@
 const TargetAudience = () => {
   return (
-    <section className="max-w-6xl mx-auto py-5">
+    <section className="max-w-7xl mx-auto py-5">
       <h2 className="font-playfair font-black text-3xl md:text-4xl text-black dark:text-white mb-12 text-center">
         Who is it for?
       </h2>
@@ -10,7 +10,7 @@ const TargetAudience = () => {
       </p>
 
       <div className="grid md:grid-cols-3 gap-6 mb-12">
-        <div className="rounded-2xl bg-design-bg p-6 shadow-sm">
+        <div className="rounded-2xl bg-design-bg p-6 ">
           <h3 className="font-playfair font-black text-2xl text-black dark:text-white mb-2">UX</h3>
           <p className="font-raleway font-semibold text-gray-800 dark:text-gray-200 mb-3">
             Design smarter. Test faster. Handoff smoother.
@@ -20,7 +20,7 @@ const TargetAudience = () => {
           </p>
         </div>
 
-        <div className="rounded-2xl bg-design-bg p-6 shadow-sm">
+        <div className="rounded-2xl bg-design-bg-pink p-6 ">
           <h3 className="font-playfair font-black text-2xl text-black dark:text-white mb-2">Product</h3>
           <p className="font-raleway font-semibold text-gray-800 dark:text-gray-200 mb-3">
             Validate ideas with real behaviour, not assumptions.
@@ -30,7 +30,7 @@ const TargetAudience = () => {
           </p>
         </div>
 
-        <div className="rounded-2xl bg-design-bg p-6 shadow-sm">
+        <div className="rounded-2xl bg-design-bg p-6">
           <h3 className="font-playfair font-black text-2xl text-black dark:text-white mb-2">Marketing and Sales</h3>
           <p className="font-raleway font-semibold text-gray-800 dark:text-gray-200 mb-3">
             Move fast. Experiment. Adapt to your audience.
