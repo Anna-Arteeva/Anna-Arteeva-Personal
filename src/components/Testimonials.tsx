@@ -7,11 +7,9 @@ const Testimonials = () => {
       className="py-20 px-4"
     >
       <div className="max-w-7xl mx-auto">
-        <h3 
-          className="font-playfair font-bold text-3xl text-black dark:text-white mb-12 text-center"
-        >
-          What People Say
-        </h3>
+      <h2 className="font-playfair font-black text-3xl md:text-4xl text-black dark:text-white mb-12 text-center">
+      What People Say
+      </h2>
         
         {/* Masonry Layout using CSS columns */}
         <div 
