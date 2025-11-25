@@ -38,6 +38,8 @@
     --design-pink: 336 82% 62%;
     --design-bg: 20 34% 52% / 0.1;
     --design-bg-pink: 340 63% 55% / 0.1;
+    --cohort-brown: rgba(175, 119, 92, 0.1);
+    --inhouse-pink: rgba(213, 69, 117, 0.1);
 
     /* Typography scale */
     --headline-giant: 4.5rem;
@@ -92,6 +94,8 @@
     --design-pink: 336 82% 75%;
     --design-bg: 20 34% 52% / 0.1;
     --design-bg-pink: 340 63% 55% / 0.1;
+    --cohort-brown: rgba(175, 119, 92, 0.15);
+    --inhouse-pink: rgba(213, 69, 117, 0.15);
 
     --sidebar-background: 0 0% 8%;
     --sidebar-foreground: 0 0% 95%;
@@ -219,6 +223,13 @@
 
   .bg-design-bg {
     background-color: hsl(var(--design-bg));
+  }
+
+  /* Gradient background for vibe-coding section */
+  .bg-vibe-gradient {
+    background: linear-gradient(135deg, 
+      var(--cohort-brown) 0%, 
+      var(--inhouse-pink) 100%);
   }
 
   /* FT specific animations */
