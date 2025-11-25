@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import ThemeToggle from "./ThemeToggle";
 
 const MainNav = () => {
   const location = useLocation();
@@ -10,29 +11,33 @@ const MainNav = () => {
     }`;
 
   return (
-    <nav className="flex flex-row gap-7 items-center justify-center text-lg">
-      <Link to="/ai" className={linkClass(isActive('/ai'))}>
-      AI training
-      </Link>
+    <div className="relative">
+      <nav className="flex flex-row gap-7 items-center justify-center text-lg">
+        <Link to="/ai" className={linkClass(isActive('/ai'))}>
+        AI training
+        </Link>
 
-      <a 
-        href="https://medium.com/@annaarteeva" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className={linkClass(false)}
-      >
-        Blog
-      </a>
+        <a 
+          href="https://medium.com/@annaarteeva" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className={linkClass(false)}
+        >
+          Blog
+        </a>
 
-      <a 
-        href="https://www.linkedin.com/in/annaarteeva/" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className={linkClass(false)}
-      >
-        LinkedIn
-      </a>
-    </nav>
+        <a 
+          href="https://www.linkedin.com/in/annaarteeva/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className={linkClass(false)}
+        >
+          LinkedIn
+        </a>
+      </nav>
+      
+      <ThemeToggle className="fixed top-3 right-3" />
+    </div>
   );
 };
 

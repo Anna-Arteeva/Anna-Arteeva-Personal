@@ -3,7 +3,6 @@ import { useEffect, useState, useCallback } from "react";
 import { Play } from "lucide-react";
 import MainNav from "./MainNav";
 import SiteBrand from "./SiteBrand";
-import ThemeToggle from "./ThemeToggle";
 
 interface WordHighlight {
   word: string;
@@ -204,11 +203,6 @@ const CinematicHero = () => {
 
   return (
     <section className="min-h-screen relative overflow-hidden flex flex-col bg-design-bg rounded-2xl m-4">
-      {/* Theme Toggle Button */}
-      <ThemeToggle
-        className="absolute bottom-5 right-5 z-30"
-        opacity={getElementOpacity(heroElements.navigation.fadeThreshold)}
-      />
 
       {/* Site Brand positioned at top */}
       <div className="pt-8 px-4 text-center">

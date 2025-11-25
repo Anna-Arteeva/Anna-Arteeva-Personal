@@ -6,7 +6,6 @@ import Logger from "@/components/Logger";
 import WorkshopContact from "@/components/WorkshopContact";
 import PushCohorts from "@/components/PushCohorts";
 import TrainingTypes from "@/components/TrainingTypes";
-import ThemeToggle from "@/components/ThemeToggle";
 
 
 const AI = () => {
@@ -51,12 +50,8 @@ const AI = () => {
     <main className="py-12 px-4 relative">
       <Logger event="page_view" data={{ page: 'ai_courses' }} />
       
-      {/* Theme Toggle Button */}
-      <ThemeToggle
-        className="absolute top-5 right-5 z-30"
-      />
       
-      <div className="max-w-6xl mx-auto">
+    <div className="max-w-6xl mx-auto">
         <div className="mb-16 text-center">
           <SiteBrand />
           <div className="mt-6">
@@ -100,7 +95,11 @@ const AI = () => {
                   AI foundations and literacy
                 </h3>
                 <p className="font-raleway text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-4">
-                  Understand different AI models and where and how to get the most out of them, how to prompt like a pro for different use cases for AI productivity, as well as making system prompts for your product features. Explore practical tools such as ChatGPT, Google AI Studio, NotebookLM, ElevenLabs, Midjourney, Stable Diffusion, Wispr Flow, Cursor, and Lovable, and understand when to use them in your research, ideation, and product-building process.
+                  Understand different AI models and where and how to get the most out of them, how to prompt like a pro for different use cases for AI productivity, 
+                  as well as making system prompts for your product features. 
+                  Explore practical tools such as ChatGPT, Google AI Studio, NotebookLM, 
+                  ElevenLabs, Midjourney, Stable Diffusion, Wispr Flow, Cursor, and Lovable, v0, Replit, Claude 
+                  and understand when to use them in your research, ideation, and product-building process.
                 </p>
               </div>
 

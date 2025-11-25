@@ -1,81 +1,14 @@
-import { useRef, useEffect, useState } from "react";
 import testimonialsData from "../data/testimonials.json";
-import { useIsMobile } from "../hooks/use-mobile";
 
 const Testimonials = () => {
-  const testimonialsRef = useRef<HTMLDivElement>(null);
-  const [testimonialsProgress, setTestimonialsProgress] = useState(0);
-  const isMobile = useIsMobile();
-
-  // Smooth clamp utility
-  const clamp = (value: number, min: number, max: number) => {
-    if (value < min) return min;
-    if (value > max) return max;
-    return value;
-  };
-
-  // Ease for a more cinematic feel
-  const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
-
-  // Returns 0..1 with 1 when element center is near viewport center, fading to 0 near edges
-  const getScrollProgress = (elementRef: React.RefObject<HTMLDivElement>) => {
-    if (!elementRef.current) return 0;
-    const rect = elementRef.current.getBoundingClientRect();
-    const viewportHeight = window.innerHeight;
-    const elementCenterY = rect.top + rect.height / 2;
-    const viewportCenterY = viewportHeight / 2;
-    const distanceFromCenter = Math.abs(elementCenterY - viewportCenterY);
-    const maxDistance = viewportHeight * 0.6; // fade out near edges
-    const raw = 1 - distanceFromCenter / maxDistance;
-    return clamp(raw, 0, 1);
-  };
-
-  useEffect(() => {
-    // Only enable scroll animations on desktop
-    if (isMobile) {
-      setTestimonialsProgress(1); // Set to full visibility on mobile
-      return;
-    }
-
-    const updateProgress = () => {
-      setTestimonialsProgress(getScrollProgress(testimonialsRef));
-    };
-
-    updateProgress();
-    window.addEventListener('scroll', updateProgress);
-    return () => window.removeEventListener('scroll', updateProgress);
-  }, [isMobile]);
-
-  // Derive animation values
-  const deriveStyles = (progress: number) => {
-    const eased = easeOutCubic(progress);
-    const bgOpacity = easeOutCubic(clamp(eased, 0, 1));
-    const textOpacity = easeOutCubic(clamp((eased - 0.08) / 0.92, 0, 1));
-    // Translate from below upwards as it appears
-    const bgTranslateY = (1 - bgOpacity) * 24;
-    const textTranslateY = (1 - textOpacity) * 36;
-    return {
-      bg: { opacity: bgOpacity, translateY: bgTranslateY },
-      text: { opacity: textOpacity, translateY: textTranslateY },
-    };
-  };
-
-  const testimonialsAnim = deriveStyles(testimonialsProgress);
 
   return (
     <section 
-      ref={testimonialsRef}
       className="py-20 px-4"
     >
       <div className="max-w-7xl mx-auto">
         <h3 
           className="font-playfair font-bold text-3xl text-black dark:text-white mb-12 text-center"
-          style={{
-            opacity: testimonialsAnim.text.opacity,
-            transform: `translateY(${testimonialsAnim.text.translateY}px)`,
-            transition: isMobile ? "none" : "opacity 300ms ease, transform 520ms cubic-bezier(0.4, 0, 0.2, 1)",
-            willChange: isMobile ? "auto" : "opacity, transform",
-          }}
         >
           What People Say
         </h3>
@@ -83,12 +16,6 @@ const Testimonials = () => {
         {/* Masonry Layout using CSS columns */}
         <div 
           className="columns-1 md:columns-2 lg:columns-3 gap-8"
-          style={{
-            opacity: testimonialsAnim.text.opacity,
-            transform: `translateY(${testimonialsAnim.text.translateY + 8}px)`,
-            transition: isMobile ? "none" : "opacity 320ms ease, transform 540ms cubic-bezier(0.4, 0, 0.2, 1)",
-            willChange: isMobile ? "auto" : "opacity, transform",
-          }}
         >
           {testimonialsData.map((testimonial) => {
             // Determine background class

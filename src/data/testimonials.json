@@ -6,7 +6,7 @@
     "author": "Derek Fidler",
     "role": "Director, Product Strategy & UX @ Flatpay",
     "linkedinUrl": "https://www.linkedin.com/in/derekfidler/",
-    "profileImage": "https://media.licdn.com/dms/image/v2/D4E03AQGzZgm5gp_5sw/profile-displayphoto-shrink_800_800/B4EZOvpHt6HkAo-/0/1733818613072?e=1762992000&v=beta&t=DKqAe6TwxapOFCw3I8WSsfE0VUrzzq1Jqcc03jq4_II",
+    "profileImage": "/avatars/derek.jpeg",
     "backgroundColor": "design-bg-pink"
   },
   {
@@ -16,7 +16,7 @@
     "author": "Stefan Buck",
     "role": "CPO at Payoneer Merchant Services",
     "linkedinUrl": "https://www.linkedin.com/in/stefan-buck-aaa96b30/",
-    "profileImage": "https://media.licdn.com/dms/image/v2/D4D03AQHf1cuAq2wGrQ/profile-displayphoto-shrink_800_800/B4DZX3hF8aG4Ac-/0/1743614402970?e=1762992000&v=beta&t=9hWHcMfbuq9jbHA047ulZXtEJTVw2psDWj2ioeUOdqc",
+    "profileImage": "/avatars/stefan-buck.jpeg",
     "backgroundColor": null
   },
   {
@@ -26,7 +26,7 @@
     "author": "Ofri Avizov",
     "role": "Group Product Manager at Payoneer",
     "linkedinUrl": "https://www.linkedin.com/in/avizov/",
-    "profileImage": "https://media.licdn.com/dms/image/v2/D4D03AQHLGeqFCWcUNQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731521376795?e=1762992000&v=beta&t=gbI9vR5es9K22eTo5q-1tw2M4mCIzKLzYQwgqhWsep4",
+    "profileImage": "/avatars/ofri-avizov.jpeg",
     "backgroundColor": null
   },
   {
@@ -36,7 +36,7 @@
     "author": "Leo Chow",
     "role": "Senior Product Designer | SaaS & B2B",
     "linkedinUrl": "https://www.linkedin.com/in/chowleo/",
-    "profileImage": "https://media.licdn.com/dms/image/v2/D4E03AQEKonftwZAdvg/profile-displayphoto-shrink_800_800/B4EZZcqdZwHoAc-/0/1745311357091?e=1762992000&v=beta&t=57UKyFuoQ48uAi3mKdQ14p79Q1Nv0kbSifJdC7o7q5o",
+    "profileImage": "/avatars/leo.jpeg",
     "backgroundColor": "design-bg-pink"
   },
   {
@@ -46,7 +46,7 @@
     "author": "Judith Schneidewind",
     "role": "Digital Product & Experience Designer",
     "linkedinUrl": "https://www.linkedin.com/in/judith-schneidewind/",
-    "profileImage": "https://media.licdn.com/dms/image/v2/D4E03AQEyooMo-ad08w/profile-displayphoto-crop_800_800/B4EZkuA9i_HEAI-/0/1757413628820?e=1762992000&v=beta&t=f25dFUG3mnOnSh9PxdJXsDfHskbyKpjXHeL1qyKVsbU",
+    "profileImage": "/avatars/judith.jpeg",
     "backgroundColor": "design-bg-pink"
   },
   {
@@ -56,7 +56,7 @@
     "author": "Gualter Amaro",
     "role": "Product Designer at OLX",
     "linkedinUrl": "https://www.linkedin.com/in/gualteramaro/",
-    "profileImage": "https://media.licdn.com/dms/image/v2/C5103AQFM4BHqIElaxg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516357467828?e=1762992000&v=beta&t=CDccef-am5jWKITv3PPx2JvRIbh1Goq7C6oXiZsoJoI",
+    "profileImage": "/avatars/gualter.jpeg",
     "backgroundColor": "design-bg-pink"
   },
   {
@@ -66,7 +66,7 @@
     "author": "Stefan Link",
     "role": "ex CEO & Co-Founder @Pyoneer",
     "linkedinUrl": "https://www.linkedin.com/in/stefan-link/",
-    "profileImage": "https://media.licdn.com/dms/image/v2/D4D03AQGidPGi4H3qLw/profile-displayphoto-shrink_800_800/B4DZSD4KN8G4Ac-/0/1737379325265?e=1762992000&v=beta&t=aLg5Rt_vQ27G9GJcbbG1ezxhzsoJm7K-0xL9NHsqgm4",
+    "profileImage": "/avatars/stefan-link.jpeg",
     "backgroundColor": null
   },
   {
@@ -76,7 +76,7 @@
     "author": "Ekaterina Chalikova",
     "role": "UX expert specializing in complex domains",
     "linkedinUrl": "https://www.linkedin.com/in/ekaterinachalikova/",
-    "profileImage": "https://media.licdn.com/dms/image/v2/D4E03AQH1Yhmftp6U8w/profile-displayphoto-shrink_800_800/B4EZb8X3SWGQAc-/0/1747990836774?e=1762992000&v=beta&t=_XvQBAT41j7HbePt1MfF3ezSShVSWb5eZ7XyaMuF4A8",
+    "profileImage": "/avatars/ekaterina-chalikova.jpeg",
     "backgroundColor": "design-bg-pink"
   },
   {
@@ -86,7 +86,7 @@
     "author": "Florencia Willams",
     "role": "Senior UX Designer",
     "linkedinUrl": "https://www.linkedin.com/in/florencia-willams-8844a55a/",
-    "profileImage": "https://media.licdn.com/dms/image/v2/D4D35AQHPoZQ308DeUQ/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1728568936405?e=1761728400&v=beta&t=wVOfFAWR9VM6sSB_gSImy-pjsPc73VhVAM24IjTsun0",
+    "profileImage": "/avatars/flor.jpeg",
     "backgroundColor": "design-bg-pink"
   }
 ]
