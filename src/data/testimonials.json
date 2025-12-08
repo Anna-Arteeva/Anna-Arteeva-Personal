@@ -88,6 +88,15 @@
     "linkedinUrl": "https://www.linkedin.com/in/florencia-willams-8844a55a/",
     "profileImage": "/avatars/flor.jpeg",
     "backgroundColor": "design-bg-pink"
+  },
+  {
+    "id": 10,
+    "category": "AI training",
+    "quote": "After Anna Arteeva's AI prototyping training, using Lovable for quick prototyping became a no brainer. Looking at Figma screens versus clicking through a live prototype now feels like looking at 2D blueprints of a 3D object versus holding the real model in your hands. The speed of trying changes and the depth of what you can prototype, frontend and backend together, is on a completely different level.",
+    "author": "Danila Turuntaev",
+    "role": "Group Product Manager at Remote",
+    "profileImage": "/avatars/danila_turuntaev.jpeg",
+    "backgroundColor": "design-bg-pink"
   }
 ]
 
