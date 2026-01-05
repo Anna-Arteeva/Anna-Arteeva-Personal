@@ -14,11 +14,11 @@ const AI = () => {
 
         
   return (
-    <main className="py-12 px-8 relative">
+    <main className="py-12 px-4 relative">
       <Logger event="page_view" data={{ page: 'ai_courses' }} />
       
       
-    <div className="mx-auto">
+    <div className="mx-auto px-4">
         <div className="mb-16 text-center">
           <SiteBrand />
           <div className="mt-6">
