@@ -206,7 +206,7 @@ const CinematicHero = () => {
 
       {/* Site Brand positioned at top */}
       <div className="pt-8 px-4 text-center">
-        <div className="max-w-4xl mx-auto">
+        <div className="">
           <div 
             className="mb-8 transition-all duration-300 ease-out origin-center"
             style={{ 
@@ -320,7 +320,7 @@ const CinematicHero = () => {
 
       {/* Navigation positioned at bottom */}
       <div className="pb-8 px-4">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="mx-auto text-center">
           <div 
             className="transition-all duration-300 ease-out origin-center"
             style={{ 
