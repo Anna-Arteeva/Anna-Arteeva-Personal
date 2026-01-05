@@ -40,6 +40,8 @@
     --design-bg-pink: 340 63% 55% / 0.1;
     --cohort-brown: rgba(175, 119, 92, 0.1);
     --inhouse-pink: rgba(213, 69, 117, 0.1);
+    --vibe-blue: rgba(69, 117, 213, 0.1);
+    --vibe-blue-light: rgba(120, 160, 230, 0.1);
 
     /* Typography scale */
     --headline-giant: 4.5rem;
@@ -96,6 +98,8 @@
     --design-bg-pink: 340 63% 55% / 0.1;
     --cohort-brown: rgba(175, 119, 92, 0.15);
     --inhouse-pink: rgba(213, 69, 117, 0.15);
+    --vibe-blue: rgba(69, 117, 213, 0.15);
+    --vibe-blue-light: rgba(120, 160, 230, 0.15);
 
     --sidebar-background: 0 0% 8%;
     --sidebar-foreground: 0 0% 95%;
@@ -230,6 +234,13 @@
     background: linear-gradient(135deg, 
       var(--cohort-brown) 0%, 
       var(--inhouse-pink) 100%);
+  }
+
+  /* Gradient background for vibe-building section */
+  .bg-vibe-building-gradient {
+    background: linear-gradient(135deg, 
+      var(--vibe-blue-light) 0%, 
+      var(--vibe-blue) 100%);
   }
 
   /* FT specific animations */

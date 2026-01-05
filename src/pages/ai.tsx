@@ -5,6 +5,7 @@ import Logger from "@/components/Logger";
 import WorkshopContact from "@/components/WorkshopContact";
 import TrainingTypes from "@/components/TrainingTypes";
 import MavenCourse from "@/components/MavenCourse";
+import VibeBuildingMaven from "@/components/VibeBuildingMaven";
 import TrainingTopics from "@/components/TrainingTopics";
 import TargetAudience from "@/components/TargetAudience";
 
@@ -38,8 +39,11 @@ const AI = () => {
         </section>
 
 
-        {/* Maven course Section */}
-        <MavenCourse />
+        {/* Maven courses Section */}
+      <div className="max-w-6xl mx-auto flex flex-col gap-8 py-8 px-4 pt-16">
+          <VibeBuildingMaven />
+          <MavenCourse />
+        </div>
         
         {/* TrainingTypes section */}
         <section className="max-w-6xl mx-auto">

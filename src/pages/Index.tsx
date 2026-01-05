@@ -2,6 +2,7 @@ import CinematicHero from "@/components/CinematicHero";
 import WhatDoIDo from "@/components/WhatDoIDo";
 import Testimonials from "@/components/Testimonials";
 import MavenCourse from "@/components/MavenCourse";
+import VibeBuildingMaven from "@/components/VibeBuildingMaven";
 import TrainingTypes from "@/components/TrainingTypes";
 import TrainingTopics from "@/components/TrainingTopics";
 import TargetAudience from "@/components/TargetAudience";
@@ -12,7 +13,11 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <CinematicHero />
-      <MavenCourse />
+
+      <div className="max-w-6xl mx-auto flex flex-col gap-8 py-8 px-4">
+        <MavenCourse />
+        <VibeBuildingMaven />
+      </div>
       <TrainingTypes />
       <TrainingTopics />
       <TargetAudience />

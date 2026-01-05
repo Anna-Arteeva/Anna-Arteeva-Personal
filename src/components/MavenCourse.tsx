@@ -1,6 +1,6 @@
 const MavenCourse = () => {
   return (
-    <section className="max-w-6xl mx-auto py-16 px-4">
+    <section className="w-full">
       <div className="rounded-2xl bg-vibe-gradient overflow-hidden">
         <div className="grid md:grid-cols-2 gap-8 items-center p-12 md:p-16 " >
           {/* Left side - Content */}
@@ -70,7 +70,11 @@ const MavenCourse = () => {
               <h4 className="font-playfair font-black text-xl text-black dark:text-white">
                 Next cohort
               </h4>
+
               <p className="font-raleway text-black dark:text-white" style={{ fontSize: 'clamp(0.875rem, 2.5vw, 1.125rem)', lineHeight: '1.6' }}>
+                April 20th - 4 weeks - 8 live sessions × 2.5 hours
+              </p>
+              <p className="font-raleway text-black dark:text-white line-through" style={{ fontSize: 'clamp(0.875rem, 2.5vw, 1.125rem)', lineHeight: '1.6' }}>
                 January 5th - 4 weeks - 8 live sessions × 2.5 hours
               </p>
             </div>
