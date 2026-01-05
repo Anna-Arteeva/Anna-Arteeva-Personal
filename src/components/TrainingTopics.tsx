@@ -38,7 +38,7 @@ const TrainingTopics = () => {
   const trainingOpacities = trainingRefs.current.map(ref => getElementOpacity(ref));
 
   return (
-    <section className="max-w-6xl mx-auto py-10">
+    <section className="max-w-6xl mx-auto py-10 px-4">
       <div className="max-w-2xl mx-auto">
         <h2 
           ref={trainingTitleRef}

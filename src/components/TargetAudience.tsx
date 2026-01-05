@@ -1,6 +1,6 @@
 const TargetAudience = () => {
   return (
-    <section className="max-w-7xl mx-auto py-5">
+    <section className="max-w-7xl mx-auto py-5 px-4">
       <h2 className="font-playfair font-black text-3xl md:text-4xl text-black dark:text-white mb-12 text-center">
         Who is it for?
       </h2>
