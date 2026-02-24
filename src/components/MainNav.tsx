@@ -1,25 +1,14 @@
-import { Link, useLocation } from "react-router-dom";
+const linkClass =
+  "cursor-pointer transition-colors duration-300 font-playfair text-black dark:text-white hover:text-design-pink";
 
 const MainNav = () => {
-  const location = useLocation();
-  const isActive = (path: string) => location.pathname === path;
-
-  const linkClass = (active: boolean) =>
-    `cursor-pointer transition-colors duration-300 font-playfair ${
-      active ? 'text-design-pink' : 'text-black dark:text-white hover:text-design-pink'
-    }`;
-
   return (
     <nav className="flex flex-row gap-7 items-center justify-center text-lg">
-      <Link to="/ai" className={linkClass(isActive('/ai'))}>
-      AI training
-      </Link>
-
       <a 
         href="https://medium.com/@annaarteeva" 
         target="_blank" 
         rel="noopener noreferrer"
-        className={linkClass(false)}
+        className={linkClass}
       >
         Blog
       </a>
@@ -28,7 +17,7 @@ const MainNav = () => {
         href="https://www.linkedin.com/in/annaarteeva/" 
         target="_blank" 
         rel="noopener noreferrer"
-        className={linkClass(false)}
+        className={linkClass}
       >
         LinkedIn
       </a>

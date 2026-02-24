@@ -41,7 +41,7 @@ const AITraining = () => {
               <BreadcrumbSeparator />
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link to="/ai">AI Courses</Link>
+                  <Link to="/#training">AI Courses</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
@@ -79,7 +79,7 @@ const AITraining = () => {
                 Enroll
               </button>
               <Link
-                to="/ai"
+                to="/#training"
                 className="px-5 py-3 rounded-xl border border-gray-300 dark:border-gray-700 text-black dark:text-white font-playfair hover:bg-black/5 dark:hover:bg-white/5 transition"
               >
                 Get updates
@@ -253,7 +253,7 @@ const AITraining = () => {
                 Enroll
               </button>
               <Link
-                to="/ai"
+                to="/#training"
                 className="px-5 py-3 rounded-xl border border-gray-300 dark:border-gray-700 text-black dark:text-white font-playfair hover:bg-black/5 dark:hover:bg-white/5 transition"
               >
                 Get updates
