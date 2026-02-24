@@ -1,4 +1,4 @@
-const MavenCourse = () => {
+const AIprototypingDesigners = () => {
   return (
     <section className="w-full">
       <div className="rounded-2xl bg-vibe-gradient overflow-hidden">
@@ -101,5 +101,4 @@ const MavenCourse = () => {
   );
 };
 
-export default MavenCourse;
-
+export default AIprototypingDesigners;

@@ -243,9 +243,9 @@
       var(--vibe-blue) 100%);
   }
 
-  /* AI Prototyping for Product People: gradient (10% darker blues) + bigger, more visible noise */
+  /* AI Prototyping for Product People */
   .bg-ai-product-people {
-    background: linear-gradient(180deg, #3ea3e6 0%, #25478a 100%);
+    background: #C6DEF8;
     position: relative;
   }
   .bg-ai-product-people::before {
@@ -264,18 +264,8 @@
     z-index: 1;
   }
 
-  /* Dark mode: same background as light, 70% black overlay on top */
-  .dark .bg-ai-product-people::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    background: rgba(0, 0, 0, 0.7);
-    pointer-events: none;
-    border-radius: inherit;
-  }
-  .dark .bg-ai-product-people > * {
-    z-index: 2;
+  .dark .bg-ai-product-people {
+    background: #03142A;
   }
 
   .bg-ai-product-people-footer {

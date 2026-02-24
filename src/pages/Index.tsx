@@ -1,6 +1,6 @@
 import CinematicHero from "@/components/CinematicHero";
 import Testimonials from "@/components/Testimonials";
-import MavenCourse from "@/components/MavenCourse";
+import AIprototypingDesigners from "@/components/AIprototypingDesigners";
 import AIPrototypingProductPeople from "@/components/AIPrototypingProductPeople";
 import TrainingTypes from "@/components/TrainingTypes";
 import TrainingTopics from "@/components/TrainingTopics";
@@ -27,7 +27,7 @@ const Index = () => {
       </section>
 
       <div className="max-w-6xl mx-auto flex flex-col gap-8 py-8 px-4">
-        <MavenCourse />
+        <AIprototypingDesigners />
         <AIPrototypingProductPeople />
       </div>
       <section className="max-w-6xl mx-auto">
