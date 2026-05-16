@@ -120,7 +120,7 @@ const TrainingTypes = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4">
+    <div className="max-w-6xl mx-auto px-4 py-8">
       <div className="grid md:grid-cols-2 gap-6">
         {/* Cohort-based Card */}
         <Card
@@ -152,7 +152,7 @@ const TrainingTypes = () => {
                 AI in UX, and UX for AI
               </h3>
               <p className="font-raleway text-base text-black dark:text-white leading-relaxed">
-                AI foundations, AI for productivity and design AI-powered products
+                AI foundations, AI for productivity, and designing AI-powered products
               </p>
             </div>
 
@@ -162,7 +162,7 @@ const TrainingTypes = () => {
                 AI prototyping
               </h3>
               <p className="font-raleway text-base text-black dark:text-white leading-relaxed">
-                All you need to know to build products using AI-powered tools, tailored to designer use-cases
+                All you need to know to build products using AI-powered tools, tailored to designer use cases
               </p>
             </div>
 

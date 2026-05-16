@@ -1,18 +1,9 @@
 
-import { useEffect, useState, useCallback } from "react";
-import { Play } from "lucide-react";
+import { useEffect, useState } from "react";
 import MainNav from "./MainNav";
 import SiteBrand from "./SiteBrand";
 
-interface WordHighlight {
-  word: string;
-  isActive: boolean;
-  delay: number;
-}
-
 const CinematicHero = () => {
-  const [currentWordIndex, setCurrentWordIndex] = useState(-1);
-  const [isComplete, setIsComplete] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [titleScale, setTitleScale] = useState(1);
 
@@ -22,15 +13,6 @@ const CinematicHero = () => {
     { text: "I", fadeThreshold: 100 },
     { text: "am", fadeThreshold: 150 },
     { text: "Anna", fadeThreshold: 120 },
-  ];
-
-  // Interactive words for animation
-  const heroWords: WordHighlight[] = [
-    { word: "AI prototyping", isActive: false, delay: 0 },
-    { word: "SaaS", isActive: false, delay: 800 },
-    { word: "FinTech", isActive: false, delay: 1600 },
-    { word: "B2B", isActive: false, delay: 2400 },
-    { word: "UX for AI", isActive: false, delay: 3000 },
   ];
 
   // Paragraph words for gradual fade out
@@ -50,60 +32,10 @@ const CinematicHero = () => {
     { text: "products", fadeThreshold: 360 },
   ];
 
-  const [words, setWords] = useState(heroWords);
-
-  const activateWord = useCallback((index: number) => {
-    setWords(prev => 
-      prev.map((word, i) => ({
-        ...word,
-        isActive: i === index
-      }))
-    );
-    setCurrentWordIndex(index);
-  }, []);
-
-  const deactivateWord = useCallback((index: number) => {
-    setWords(prev => 
-      prev.map((word, i) => ({
-        ...word,
-        isActive: i === index ? false : word.isActive
-      }))
-    );
-  }, []);
-
-  useEffect(() => {
-    const timeouts: NodeJS.Timeout[] = [];
-    
-    // Activate each word with delay
-    heroWords.forEach((word, index) => {
-      const activateTimeout = setTimeout(() => {
-        activateWord(index);
-      }, word.delay);
-      
-      const deactivateTimeout = setTimeout(() => {
-        deactivateWord(index);
-      }, word.delay + 1600);
-      
-      timeouts.push(activateTimeout, deactivateTimeout);
-    });
-
-    // Mark as complete after all animations
-    const completeTimeout = setTimeout(() => {
-      setIsComplete(true);
-    }, 4800);
-    
-    timeouts.push(completeTimeout);
-
-    return () => {
-      timeouts.forEach(timeout => clearTimeout(timeout));
-    };
-  }, [activateWord, deactivateWord]);
-
   // Hero elements with their fade thresholds
   const heroElements = {
     name: { fadeThreshold: 60 },
     subtitle: { fadeThreshold: 120 },
-    interactiveWords: { fadeThreshold: 160 },
     paragraph: { fadeThreshold: 200 },
     navigation: { fadeThreshold: 300 },
     scrollIndicator: { fadeThreshold: 140 },
@@ -114,91 +46,32 @@ const CinematicHero = () => {
   const getElementOpacity = (fadeThreshold: number) => {
     const fadeStart = fadeThreshold;
     const fadeEnd = fadeThreshold + 100;
-    
+
     if (scrollY < fadeStart) return 1;
     if (scrollY > fadeEnd) return 0;
-    
+
     return 1 - ((scrollY - fadeStart) / (fadeEnd - fadeStart));
   };
 
-  // Scroll effect for title zoom and word fading
+  // rAF-throttled scroll handler — drives opacity directly from scroll position
+  // so word/element fades track the cursor 1:1 instead of chasing it via transitions.
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
-      
-      setScrollY(scrollPosition);
-      
-      // Calculate scale based on scroll position
-      const scrollProgress = Math.min(scrollPosition / (windowHeight * 0.8), 1);
-      const scale = 1 + (scrollProgress * 0.8);
-      
-      setTitleScale(scale);
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const scrollProgress = Math.min(y / (windowHeight * 0.8), 1);
+        setScrollY(y);
+        setTitleScale(1 + scrollProgress * 0.8);
+        ticking = false;
+      });
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  const handleScrollEffect = useCallback(() => {
-    const windowHeight = window.innerHeight;
-    const targetScroll = windowHeight * 0.9;
-    const currentScroll = window.scrollY;
-    
-    // Scroll down slowly to 90vh
-    const scrollDown = () => {
-      const startTime = Date.now();
-      const duration = 3000; // 3 seconds for slow scroll down
-      
-      const animateDown = () => {
-        const elapsed = Date.now() - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        
-        // Easing function for smooth animation
-        const easeOut = 1 - Math.pow(1 - progress, 3);
-        const currentPosition = currentScroll + (targetScroll - currentScroll) * easeOut;
-        
-        window.scrollTo(0, currentPosition);
-        
-        if (progress < 1) {
-          requestAnimationFrame(animateDown);
-        } else {
-          // Start scrolling back up after reaching 90vh
-          setTimeout(scrollUp, 500); // Small pause before scrolling back
-        }
-      };
-      
-      requestAnimationFrame(animateDown);
-    };
-    
-    // Scroll back up faster
-    const scrollUp = () => {
-      const startTime = Date.now();
-      const duration = 1500; // 1.5 seconds for faster scroll up
-      const startPosition = window.scrollY;
-      
-      const animateUp = () => {
-        const elapsed = Date.now() - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        
-        // Easing function for smooth animation
-        const easeOut = 1 - Math.pow(1 - progress, 3);
-        const currentPosition = startPosition - (startPosition - currentScroll) * easeOut;
-        
-        window.scrollTo(0, currentPosition);
-        
-        if (progress < 1) {
-          requestAnimationFrame(animateUp);
-        }
-      };
-      
-      requestAnimationFrame(animateUp);
-    };
-    
-    scrollDown();
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
@@ -207,9 +80,9 @@ const CinematicHero = () => {
       {/* Site Brand positioned at top */}
       <div className="pt-8 px-4 text-center">
         <div className="">
-          <div 
-            className="mb-8 transition-all duration-300 ease-out origin-center"
-            style={{ 
+          <div
+            className="mb-8 origin-center"
+            style={{
               transform: `scale(${titleScale})`,
               opacity: getElementOpacity(heroElements.name.fadeThreshold),
               willChange: 'transform, opacity'
@@ -224,9 +97,9 @@ const CinematicHero = () => {
       <div className="flex-1 flex flex-col items-center justify-center px-4">
         <div className="max-w-4xl mx-auto text-center relative z-20">
           {/* Main Headline with Cinematic Zoom and Staggered Fade */}
-          <div 
-            className="mb-8 transition-transform duration-300 ease-out origin-center"
-            style={{ 
+          <div
+            className="mb-8 origin-center"
+            style={{
               transform: `scale(${titleScale})`,
               willChange: 'transform'
             }}
@@ -236,7 +109,6 @@ const CinematicHero = () => {
                 {headlineWords.map((word, index) => (
                   <span
                     key={index}
-                    className="transition-opacity duration-300"
                     style={{
                       opacity: getElementOpacity(word.fadeThreshold),
                       willChange: 'opacity'
@@ -250,9 +122,9 @@ const CinematicHero = () => {
           </div>
 
           {/* Paragraph with gradual word fade */}
-          <div 
-            className="mb-16 transition-all duration-300 ease-out origin-center"
-            style={{ 
+          <div
+            className="mb-16 origin-center"
+            style={{
               transform: `scale(${titleScale})`,
               opacity: getElementOpacity(heroElements.paragraph.fadeThreshold),
               willChange: 'transform, opacity'
@@ -262,13 +134,12 @@ const CinematicHero = () => {
               {paragraphWords.map((word, index) => (
                 <span
                   key={index}
-                  className="transition-opacity duration-300"
                   style={{
                     opacity: getElementOpacity(word.fadeThreshold),
                     willChange: 'opacity'
                   }}
                 >
-                  {word.text === 'design leader' || word.text === 'AI coach.' || word.text === 'educator' ? (
+                  {word.text === 'design leader' || word.text === 'AI coach.' ? (
                     <span className="text-design-pink">{word.text}</span>
                   ) : (
                     word.text
@@ -279,37 +150,20 @@ const CinematicHero = () => {
             </p>
           </div>
 
-          {/* Interactive word section */}
-          <div 
-            className="transition-all duration-300 ease-out origin-center"
-            style={{ 
+          {/* CTA */}
+          <div
+            className="origin-center"
+            style={{
               transform: `scale(${titleScale})`,
-              opacity: getElementOpacity(heroElements.interactiveWords.fadeThreshold),
-              willChange: 'transform, opacity'
+              opacity: getElementOpacity(heroElements.paragraph.fadeThreshold),
+              willChange: 'transform, opacity',
             }}
           >
-            <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
-              {words.map((word, index) => (
-                <span
-                  key={index}
-                  className={`word-highlight ${word.isActive ? 'active' : ''} ${
-                    isComplete ? 'opacity-100' : ''
-                  }`}
-                  style={{
-                    animationDelay: `${word.delay}ms`
-                  }}
-                >
-                  {word.word}
-                </span>
-              ))}
-            </div>
-            
-            {/* CTA Buttons */}
-            <div className="flex flex-row gap-4 items-center justify-center mt-8">
-              <a target="_blank" 
+            <div className="flex flex-row gap-4 items-center justify-center">
+              <a target="_blank"
                 href="https://www.linkedin.com/in/annaarteeva/"
                 className="px-6 py-3 border-2 border-design-pink bg-design-pink text-white font-playfair font-medium rounded-xl
-                 hover:bg-opacity-90 transition-all duration-300 hover:scale-105"
+                 hover:bg-opacity-90 transition-transform duration-300 ease-out hover:scale-105"
               >
                 Get in touch
               </a>
@@ -321,11 +175,11 @@ const CinematicHero = () => {
       {/* Navigation positioned at bottom */}
       <div className="pb-8 px-4">
         <div className="mx-auto text-center">
-          <div 
-            className="transition-all duration-300 ease-out origin-center"
-            style={{ 
+          <div
+            className="origin-center"
+            style={{
               opacity: getElementOpacity(heroElements.navigation.fadeThreshold),
-              willChange: 'transform, opacity'
+              willChange: 'opacity'
             }}
           >
             <MainNav />

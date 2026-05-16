@@ -24,9 +24,9 @@ const CustomerLogos = () => {
 
   return (
     <section className="py-20 px-4">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <h2 className="font-playfair font-black text-3xl md:text-4xl text-black dark:text-white mb-16 text-center">
-          Trained people and Teams from
+          Trained teams and people from
         </h2>
         
         <div className="flex flex-wrap justify-center items-center gap-16 md:gap-20">

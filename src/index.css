@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Financial Times inspired design system */
 
 @layer base {
   :root {
@@ -386,15 +385,6 @@
     section.bg-design-bg.rounded-2xl.m-4 .font-playfair.font-medium.text-lg {
       gap: 1.2rem;
       margin-right: 4rem;
-    }
-  }
-}
-
-@layer base {
-  /* Hide interactive word chips (AI, SaaS, FinTech, B2B) on mobile */
-  @media (max-width: 640px) {
-    section.bg-design-bg.rounded-2xl.m-4 span.word-highlight {
-      display: none;
     }
   }
 }

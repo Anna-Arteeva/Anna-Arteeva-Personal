@@ -3,17 +3,17 @@ import testimonialsData from "../data/testimonials.json";
 const Testimonials = () => {
 
   return (
-    <section 
+    <section
       className="py-20 px-4"
     >
-      <div className="max-w-7xl mx-auto">
-      <h2 className="font-playfair font-black text-3xl md:text-4xl text-black dark:text-white mb-12 text-center">
-      What People Say
-      </h2>
+      <div className="max-w-6xl mx-auto">
+        <h2 className="font-playfair font-black text-3xl md:text-4xl text-black dark:text-white mb-16 text-center animate-in fade-in duration-700">
+          What People Say
+        </h2>
         
         {/* Masonry Layout using CSS columns */}
-        <div 
-          className="columns-1 md:columns-2 lg:columns-3 gap-8"
+        <div
+          className="columns-1 md:columns-2 lg:columns-3 gap-8 animate-in fade-in duration-700 delay-150"
         >
           {testimonialsData.map((testimonial) => {
             // Determine background class

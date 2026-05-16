@@ -6,11 +6,17 @@ const TrainingTopics = () => {
   const trainingRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        setScrollY(window.scrollY);
+        ticking = false;
+      });
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -38,11 +44,11 @@ const TrainingTopics = () => {
   const trainingOpacities = trainingRefs.current.map(ref => getElementOpacity(ref));
 
   return (
-    <section className="max-w-6xl mx-auto py-10 px-4">
-      <div className="max-w-2xl mx-auto">
-        <h2 
+    <section className="max-w-6xl mx-auto py-20 px-4">
+      <div className="max-w-3xl mx-auto">
+        <h2
           ref={trainingTitleRef}
-          className="font-playfair font-black text-3xl md:text-4xl text-black dark:text-white mb-12 mt-24 text-center"
+          className="font-playfair font-black text-3xl md:text-4xl text-black dark:text-white mb-16 text-center"
           style={{ opacity: trainingTitleOpacity }}
         >
           Training topics
@@ -53,7 +59,7 @@ const TrainingTopics = () => {
           {/* AI literacy */}
           <div 
             ref={el => trainingRefs.current[0] = el}
-            className="transition-opacity duration-1000"
+            className="transition-opacity duration-500 ease-out"
             style={{ opacity: trainingOpacities[0] || 0 }}
           >
             <h3 className="font-playfair font-bold text-2xl text-black dark:text-white mb-4">
@@ -71,7 +77,7 @@ const TrainingTopics = () => {
           {/* UX for AI */}
           <div 
             ref={el => trainingRefs.current[1] = el}
-            className="transition-opacity duration-1000"
+            className="transition-opacity duration-500 ease-out"
             style={{ opacity: trainingOpacities[1] || 0 }}
           >
             <h3 className="font-playfair font-bold text-2xl text-black dark:text-white mb-4">
@@ -85,7 +91,7 @@ const TrainingTopics = () => {
           {/* AI prototyping */}
           <div 
             ref={el => trainingRefs.current[2] = el}
-            className="transition-opacity duration-1000"
+            className="transition-opacity duration-500 ease-out"
             style={{ opacity: trainingOpacities[2] || 0 }}
           >
             <h3 className="font-playfair font-bold text-2xl text-black dark:text-white mb-4">
@@ -97,12 +103,13 @@ const TrainingTopics = () => {
           </div>
         </div>
 
-        <div 
-          className="rounded-2xl bg-design-bg p-6 text-center mt-12 transition-opacity duration-1000"
+        <div
+          ref={el => trainingRefs.current[3] = el}
+          className="rounded-2xl bg-design-bg p-6 text-center mt-12 transition-opacity duration-500 ease-out"
           style={{ opacity: trainingOpacities[3] || 0 }}
         >
           <p className="font-raleway text-gray-800 dark:text-gray-200">
-            <span className="font-semibold">Included with every workshop</span> recordings, resource kit, prompt and pattern library, and a 30-day follow-up check-in.
+            <span className="font-semibold">Included with every workshop:</span> recordings, resource kit, prompt and pattern library, and a 30-day follow-up check-in.
           </p>
         </div>
       </div>
