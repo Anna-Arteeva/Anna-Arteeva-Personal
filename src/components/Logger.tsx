@@ -5,21 +5,16 @@ interface LoggerProps {
   data?: Record<string, unknown>;
 }
 
+// Minimal client-side logger placeholder. Replace with real analytics as needed.
 const Logger = ({ event, data }: LoggerProps) => {
+  // Serialise so a new object literal on each render doesn't re-log the event.
+  const payload = JSON.stringify(data ?? {});
+
   useEffect(() => {
-    // Minimal client-side logger placeholder. Replace with real analytics as needed.
-    try {
-      const payload = { event, data, ts: new Date().toISOString() };
-      // eslint-disable-next-line no-console
-      console.info("log", payload);
-    } catch {
-      // ignore
-    }
-  }, [event, data]);
+    console.info("log", { event, data: JSON.parse(payload), ts: new Date().toISOString() });
+  }, [event, payload]);
 
   return null;
 };
 
 export default Logger;
-
-

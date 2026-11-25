@@ -1,5 +1,16 @@
 import testimonialsData from "../data/testimonials.json";
 
+// Leadership recommendations are shown in the About section instead.
+const courseReviews = testimonialsData.filter(
+  (testimonial) => testimonial.category !== "Design & Leadership"
+);
+
+// Map the JSON's backgroundColor values to full class names, so Tailwind can see them.
+const backgroundClasses: Record<string, string> = {
+  "design-bg": "bg-design-bg",
+  "design-bg-pink": "bg-design-bg-pink",
+};
+
 const Testimonials = () => {
 
   return (
@@ -8,19 +19,16 @@ const Testimonials = () => {
     >
       <div className="max-w-6xl mx-auto">
         <h2 className="font-playfair font-black text-3xl md:text-4xl text-black dark:text-white mb-16 text-center animate-in fade-in duration-700">
-          What People Say
+          What people say
         </h2>
         
         {/* Masonry Layout using CSS columns */}
         <div
           className="columns-1 md:columns-2 lg:columns-3 gap-8 animate-in fade-in duration-700 delay-150"
         >
-          {testimonialsData.map((testimonial) => {
-            // Determine background class
-            const bgClass = !testimonial.backgroundColor 
-              ? 'bg-design-bg' 
-              : `bg-${testimonial.backgroundColor}`;
-            
+          {courseReviews.map((testimonial) => {
+            const bgClass = backgroundClasses[testimonial.backgroundColor ?? ""] ?? "bg-design-bg";
+
             return (
               <div 
                 key={testimonial.id}

@@ -18,28 +18,23 @@ const CinematicHero = () => {
   // Paragraph words for gradual fade out
   const paragraphWords = [
     { text: "Product", fadeThreshold: 100 },
-    { text: "design leader", fadeThreshold: 120 },
-    { text: "and", fadeThreshold: 140 },
-    { text: "AI coach.", fadeThreshold: 160 },
-    { text: "I help", fadeThreshold: 180 },
-    { text: "teams and individuals", fadeThreshold: 200 },
-    { text: "to build", fadeThreshold: 220 },
-    { text: "with", fadeThreshold: 240 },
-    { text: "AI", fadeThreshold: 260 },
-    { text: "and", fadeThreshold: 280 },
-    { text: "design", fadeThreshold: 300 },
-    { text: "AI-powered", fadeThreshold: 340 },
-    { text: "products", fadeThreshold: 360 },
+    { text: "design leader", fadeThreshold: 120, highlight: true },
+    { text: "turned", fadeThreshold: 140 },
+    { text: "agentic coding instructor.", fadeThreshold: 160, highlight: true },
+    { text: "I teach", fadeThreshold: 180 },
+    { text: "designers", fadeThreshold: 200 },
+    { text: "and", fadeThreshold: 220 },
+    { text: "product teams", fadeThreshold: 240 },
+    { text: "to build", fadeThreshold: 280 },
+    { text: "with", fadeThreshold: 320 },
+    { text: "AI", fadeThreshold: 360 },
   ];
 
   // Hero elements with their fade thresholds
   const heroElements = {
     name: { fadeThreshold: 60 },
-    subtitle: { fadeThreshold: 120 },
     paragraph: { fadeThreshold: 200 },
     navigation: { fadeThreshold: 300 },
-    scrollIndicator: { fadeThreshold: 140 },
-    scrollButton: { fadeThreshold: 350 }
   };
 
   // Calculate element opacity based on scroll position
@@ -79,17 +74,15 @@ const CinematicHero = () => {
 
       {/* Site Brand positioned at top */}
       <div className="pt-8 px-4 text-center">
-        <div className="">
-          <div
-            className="mb-8 origin-center"
-            style={{
-              transform: `scale(${titleScale})`,
-              opacity: getElementOpacity(heroElements.name.fadeThreshold),
-              willChange: 'transform, opacity'
-            }}
-          >
-            <SiteBrand align="center" />
-          </div>
+        <div
+          className="mb-8 origin-center"
+          style={{
+            transform: `scale(${titleScale})`,
+            opacity: getElementOpacity(heroElements.name.fadeThreshold),
+            willChange: 'transform, opacity'
+          }}
+        >
+          <SiteBrand align="center" />
         </div>
       </div>
 
@@ -105,7 +98,7 @@ const CinematicHero = () => {
             }}
           >
             <h1 className="font-playfair font-black text-7xl text-black dark:text-white leading-[80px]">
-              <div className="flex flex-wrap justify-center gap-x-4">
+              <span className="flex flex-wrap justify-center gap-x-4">
                 {headlineWords.map((word, index) => (
                   <span
                     key={index}
@@ -117,7 +110,7 @@ const CinematicHero = () => {
                     {word.text}
                   </span>
                 ))}
-              </div>
+              </span>
             </h1>
           </div>
 
@@ -139,7 +132,7 @@ const CinematicHero = () => {
                     willChange: 'opacity'
                   }}
                 >
-                  {word.text === 'design leader' || word.text === 'AI coach.' ? (
+                  {word.highlight ? (
                     <span className="text-design-pink">{word.text}</span>
                   ) : (
                     word.text
@@ -160,8 +153,10 @@ const CinematicHero = () => {
             }}
           >
             <div className="flex flex-row gap-4 items-center justify-center">
-              <a target="_blank"
+              <a
                 href="https://www.linkedin.com/in/annaarteeva/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-6 py-3 border-2 border-design-pink bg-design-pink text-white font-playfair font-medium rounded-xl
                  hover:bg-opacity-90 transition-transform duration-300 ease-out hover:scale-105"
               >

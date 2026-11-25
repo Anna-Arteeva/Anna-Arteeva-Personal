@@ -1,73 +1,37 @@
-# Welcome to your Lovable project
+# annaarteeva.com
 
-## Project info
+Personal site of Anna Arteeva: courses, in-house trainings and talks.
+A single-page React app built with Vite, TypeScript and Tailwind CSS, deployed on Vercel.
 
-**URL**: https://lovable.dev/projects/0f15a3b9-24a2-4d37-84f7-370f23d81646
+## Run locally
 
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/0f15a3b9-24a2-4d37-84f7-370f23d81646) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+Requires Node.js 20.19 or newer. Use npm: `package-lock.json` is the only lockfile.
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+npm install
+npm run dev        # http://localhost:8080
 ```
 
-**Edit a file directly in GitHub**
+| Script              | What it does                         |
+| ------------------- | ------------------------------------ |
+| `npm run dev`       | Start the dev server                 |
+| `npm run build`     | Production build into `dist/`        |
+| `npm run preview`   | Serve the production build           |
+| `npm run lint`      | ESLint                               |
+| `npm run typecheck` | TypeScript check without emitting    |
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Where things live
 
-**Use GitHub Codespaces**
+- `src/pages/Index.tsx` lists the home page sections in order; each section is a component in `src/components/`.
+- `src/data/testimonials.json` holds the testimonials. Entries in the "Design & Leadership" category show in the About section, the rest under "What people say".
+- `src/components/Speaking.tsx` lists talks. A talk switches from "upcoming" to past by itself after its date.
+- `public/` holds images, logos and favicons, served from the site root.
+- Light and dark theme: the saved or system theme is applied by a small script in `index.html` before the page paints; `ThemeToggle` switches it.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Editing with Lovable
 
-## What technologies are used for this project?
+The project is connected to [Lovable](https://lovable.dev/projects/0f15a3b9-24a2-4d37-84f7-370f23d81646). Changes made there are committed to this repository, and pushed changes show up in Lovable. `lovable-tagger` in `vite.config.ts` only runs in development mode, for Lovable's editor.
 
-This project is built with:
+## Deploy
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/0f15a3b9-24a2-4d37-84f7-370f23d81646) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Vercel builds the site with `npm run build`. `vercel.json` rewrites every path to `index.html` so client-side routes work.

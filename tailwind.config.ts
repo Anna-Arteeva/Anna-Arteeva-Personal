@@ -1,13 +1,9 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
 	darkMode: ["class"],
-	content: [
-		"./pages/**/*.{ts,tsx}",
-		"./components/**/*.{ts,tsx}",
-		"./app/**/*.{ts,tsx}",
-		"./src/**/*.{ts,tsx}",
-	],
+	content: ["./index.html", "./src/**/*.{ts,tsx}"],
 	prefix: "",
 	theme: {
 		container: {
@@ -67,23 +63,8 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				ft: {
-					salmon: 'hsl(var(--ft-salmon))',
-					charcoal: 'hsl(var(--ft-charcoal))',
-					cream: 'hsl(var(--ft-cream))',
-					brown: 'hsl(var(--ft-brown))',
-					'light-brown': 'hsl(var(--ft-light-brown))'
-				},
 				'design-pink': 'hsl(var(--design-pink))',
 				'design-bg': 'hsl(var(--design-bg))'
-			},
-			fontSize: {
-				'ft-giant': 'var(--headline-giant)',
-				'ft-large': 'var(--headline-large)',
-				'ft-medium': 'var(--headline-medium)',
-				'ft-body-lg': 'var(--body-large)',
-				'ft-body': 'var(--body-medium)',
-				'ft-caption': 'var(--caption)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -114,5 +95,5 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [tailwindcssAnimate],
 } satisfies Config;

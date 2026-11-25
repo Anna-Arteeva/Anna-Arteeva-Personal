@@ -3,18 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anna Arteeva — Product Design Leader</title>
-    <meta name="description" content="Product design leader helping multicultural teams craft holistic customer experiences. Former Head of Product Design at Payoneer. Exploring AI across the design lifecycle." />
+    <title>Anna Arteeva — AI coding courses for designers</title>
+    <meta name="description" content="Product design leader turned agentic coding instructor. Live courses on AI prototyping and agentic coding for designers, in-house trainings for product teams, and conference talks." />
     <meta name="author" content="Anna Arteeva" />
 
-    <meta property="og:title" content="Anna Arteeva — Product Design Leader" />
-    <meta property="og:description" content="Product design leader helping multicultural teams craft holistic customer experiences. Former Head of Product Design at Payoneer. Exploring AI across the design lifecycle." />
+    <meta property="og:title" content="Anna Arteeva — AI coding courses for designers" />
+    <meta property="og:description" content="Product design leader turned agentic coding instructor. Live courses on AI prototyping and agentic coding for designers, in-house trainings for product teams, and conference talks." />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Anna Arteeva" />
-    
+    <meta property="og:url" content="https://www.annaarteeva.com/" />
+    <meta property="og:image" content="https://www.annaarteeva.com/og.jpg" />
+    <link rel="canonical" href="https://www.annaarteeva.com/" />
 
-    <meta name="twitter:card" content="summary" />
-    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://www.annaarteeva.com/og.jpg" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,6 +28,17 @@
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Apply the saved or system theme before first paint, so pages never flash light in dark mode -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var dark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+          document.documentElement.classList.toggle("dark", dark);
+        } catch (e) {}
+      })();
+    </script>
   </head>
 
   <body>

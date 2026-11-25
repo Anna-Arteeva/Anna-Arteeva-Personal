@@ -6,37 +6,26 @@
     "author": "Derek Fidler",
     "role": "Director, Product Strategy & UX @ Flatpay",
     "linkedinUrl": "https://www.linkedin.com/in/derekfidler/",
-    "profileImage": "/avatars/derek.jpeg",
+    "profileImage": null,
     "backgroundColor": "design-bg-pink"
   },
   {
-    "id": 2,
-    "category": "Design & Leadership",
-    "quote": "Anna has proven herself to be an exceptional design leader, driving remarkable achievements within our organization. Anna played an important role in establishing a scalable and empowered cross-functional product domains. From start to finish, she made sure designers were right there in the mix, from opportunity exploration to implementation and beyond. Anna's exceptional standards for quality were contagious, inspiring her team to deliver their best work and strive for greater impact.",
-    "author": "Stefan Buck",
-    "role": "CPO at Payoneer Merchant Services",
-    "linkedinUrl": "https://www.linkedin.com/in/stefan-buck-aaa96b30/",
-    "profileImage": "/avatars/stefan-buck.jpeg",
-    "backgroundColor": null
-  },
-  {
-    "id": 8,
-    "category": "Design & Leadership",
-    "quote": "I highly recommend Anna for her outstanding leadership as the Head of Product Design at Payoneer, in the Merchant Services Business Unit. In her role, Anna demonstrated remarkable strength in guiding and empowering the design team, advocating for amazing customer experience within our product organization, and driving the development of our products to new heights. As a visionary, Anna's insights and creativity have consistently brought meaningful impact to our offerings and the overall user experience.",
-    "author": "Ofri Avizov",
-    "role": "Group Product Manager at Payoneer",
-    "linkedinUrl": "https://www.linkedin.com/in/avizov/",
-    "profileImage": "/avatars/ofri-avizov.jpeg",
-    "backgroundColor": null
-  },
-  {
-    "id": 4,
+    "id": 11,
     "category": "AI training",
-    "quote": "The workshop was very well structured and covered all the essential concepts I needed to start my own project—such as different vibe coding tools, frontend frameworks, database connections, and deployment. Anna really understands designers' concerns, like Figma integration and design systems. After the workshop, I felt supercharged and inspired to start building my own project!",
-    "author": "Leo Chow",
-    "role": "Senior Product Designer | SaaS & B2B",
-    "linkedinUrl": "https://www.linkedin.com/in/chowleo/",
-    "profileImage": "/avatars/leo.jpeg",
+    "quote": "I learnt way more than I expected to.",
+    "author": "Amanda James",
+    "role": "HR Director, Onboarding Operations at Remote",
+    "linkedinUrl": null,
+    "profileImage": null,
+    "backgroundColor": null
+  },
+  {
+    "id": 10,
+    "category": "AI training",
+    "quote": "After Anna Arteeva's AI prototyping training, using Lovable for quick prototyping became a no brainer. Looking at Figma screens versus clicking through a live prototype now feels like looking at 2D blueprints of a 3D object versus holding the real model in your hands. The speed of trying changes and the depth of what you can prototype, frontend and backend together, is on a completely different level.",
+    "author": "Danila Turuntaev",
+    "role": "Group Product Manager at Remote",
+    "profileImage": "/avatars/danila_turuntaev.jpeg",
     "backgroundColor": "design-bg-pink"
   },
   {
@@ -50,26 +39,6 @@
     "backgroundColor": "design-bg-pink"
   },
   {
-    "id": 6,
-    "category": "AI training",
-    "quote": "It will save you a crazy amount time. I was giving little and shy steps into this huge AI ocean and with this course, I could easily understand how to design, refine and generate interactive prototypes (including database integrations) - it's not a scary monster after all.",
-    "author": "Gualter Amaro",
-    "role": "Product Designer at OLX",
-    "linkedinUrl": "https://www.linkedin.com/in/gualteramaro/",
-    "profileImage": "/avatars/gualter.jpeg",
-    "backgroundColor": "design-bg-pink"
-  },
-  {
-    "id": 3,
-    "category": "Design & Leadership",
-    "quote": "Anna was a great support to Payoneer the product and a valuable team player. She helped us to define a sturdy product vision and improve the process to execute on it more efficiently. Thanks to her broad experience in various fields, she could zoom out to the big picture and help to connect the dots between Product and Development, at the same time doing delivering excellent design work.",
-    "author": "Stefan Link",
-    "role": "ex CEO & Co-Founder @Pyoneer",
-    "linkedinUrl": "https://www.linkedin.com/in/stefan-link/",
-    "profileImage": "/avatars/stefan-link.jpeg",
-    "backgroundColor": null
-  },
-  {
     "id": 7,
     "category": "AI training",
     "quote": "Still blown away by the workshop. So much packed in (can't wait for the recording to rewatch, especially the second part covering design systems and database integration), almost everything made sense, and most importantly it no longer feels like some mystical thing only available to coding prodigies.",
@@ -77,6 +46,26 @@
     "role": "UX expert specializing in complex domains",
     "linkedinUrl": "https://www.linkedin.com/in/ekaterinachalikova/",
     "profileImage": "/avatars/ekaterina-chalikova.jpeg",
+    "backgroundColor": "design-bg-pink"
+  },
+  {
+    "id": 4,
+    "category": "AI training",
+    "quote": "The workshop was very well structured and covered all the essential concepts I needed to start my own project—such as different vibe coding tools, frontend frameworks, database connections, and deployment. Anna really understands designers' concerns, like Figma integration and design systems. After the workshop, I felt supercharged and inspired to start building my own project!",
+    "author": "Leo Chow",
+    "role": "Senior Product Designer | SaaS & B2B",
+    "linkedinUrl": "https://www.linkedin.com/in/chowleo/",
+    "profileImage": "/avatars/leo.jpeg",
+    "backgroundColor": "design-bg-pink"
+  },
+  {
+    "id": 6,
+    "category": "AI training",
+    "quote": "It will save you a crazy amount of time. I was giving little and shy steps into this huge AI ocean and with this course, I could easily understand how to design, refine and generate interactive prototypes (including database integrations) - it's not a scary monster after all.",
+    "author": "Gualter Amaro",
+    "role": "Product Designer at OLX",
+    "linkedinUrl": "https://www.linkedin.com/in/gualteramaro/",
+    "profileImage": "/avatars/gualter.jpeg",
     "backgroundColor": "design-bg-pink"
   },
   {
@@ -90,13 +79,13 @@
     "backgroundColor": "design-bg-pink"
   },
   {
-    "id": 10,
-    "category": "AI training",
-    "quote": "After Anna Arteeva's AI prototyping training, using Lovable for quick prototyping became a no brainer. Looking at Figma screens versus clicking through a live prototype now feels like looking at 2D blueprints of a 3D object versus holding the real model in your hands. The speed of trying changes and the depth of what you can prototype, frontend and backend together, is on a completely different level.",
-    "author": "Danila Turuntaev",
-    "role": "Group Product Manager at Remote",
-    "profileImage": "/avatars/danila_turuntaev.jpeg",
-    "backgroundColor": "design-bg-pink"
+    "id": 2,
+    "category": "Design & Leadership",
+    "quote": "Anna has proven herself to be an exceptional design leader, driving remarkable achievements within our organization. Anna played an important role in establishing a scalable and empowered cross-functional product domains. From start to finish, she made sure designers were right there in the mix, from opportunity exploration to implementation and beyond. Anna's exceptional standards for quality were contagious, inspiring her team to deliver their best work and strive for greater impact.",
+    "author": "Stefan Buck",
+    "role": "CPO at Payoneer Merchant Services",
+    "linkedinUrl": "https://www.linkedin.com/in/stefan-buck-aaa96b30/",
+    "profileImage": "/avatars/stefan-buck.jpeg",
+    "backgroundColor": null
   }
 ]
-
